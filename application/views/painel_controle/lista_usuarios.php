@@ -41,7 +41,11 @@
                                     <?php echo date_format(new DateTime($tb['dt_nasc']), 'd/m/Y') ?>
                                 </td>
                                 <td>
-                                    <?php echo $tb['tipo'] ?>
+                                    <?php  if($tb['tipo'] == 0){ 
+                                        echo "Admin";
+                                    } else 
+                                    { echo "Usuário";
+                                } ?>
                                 </td>
                                 <td>
                                     <?php echo $tb['grupo'] ?>

@@ -113,7 +113,7 @@ if (isset($msg_banco)) {
                 <!-- Tipo de Conta -->
                 <div class="form-group has-feedback <?php if (form_error('txt_conta')) {echo " has-error ";};?>">
                   <label class="control-label">Tipo de Conta</label>
-                  <select class="form-control" placeholder="Grupo" name="txt_conta">
+                  <select class="form-control select2 " placeholder="Grupo" name="txt_conta">
                     <option value="" disabled selected>Tipo de Conta</option>
                     <option value="0" <?php if (set_value( 'txt_conta')=="0" ) {echo "selected";}?>
                       >Administrador</option>

@@ -87,7 +87,7 @@ if (isset($msg_banco)) {
                 <!-- Senha -->
                 <div class="form-group has-feedback <?php if (form_error('txt_senha')) {echo " has-error ";};?>">
                   <label class="control-label">Senha</label>
-                  <input type="password" class="form-control" placeholder="Senha" name="txt_senha" value="<?php echo md5($tb_user['senha']) ?>">
+                  <input type="password" class="form-control" placeholder="Senha" name="txt_senha" >
                   <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                   <?php echo form_error('txt_senha'); ?>
                 </div>
@@ -98,7 +98,7 @@ if (isset($msg_banco)) {
                 <!-- Confirma senha -->
                 <div class="form-group has-feedback <?php if (form_error('txt_conf_senha')) {echo " has-error ";};?>">
                   <label class="control-label">Confirme a senha</label>
-                  <input type="password" class="form-control" placeholder="Confirme a senha" name="txt_conf_senha" value="<?php echo $tb_user['senha'] ?>">
+                  <input type="password" class="form-control" placeholder="Confirme a senha" name="txt_conf_senha">
                   <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                   <?php echo form_error('txt_conf_senha'); ?>
                 </div>
@@ -115,10 +115,10 @@ if (isset($msg_banco)) {
                   <label class="control-label">Tipo de Conta</label>
                   <select class="form-control" placeholder="Grupo" name="txt_conta">
                     <option value="" disabled selected>Tipo de Conta</option>
-                    <option value="0" <?php if (set_value($tb_user['tipo'])=="0" ) {echo "selected";}?>
+                    <option value="0" <?php if ($tb_user['tipo']=="0" ) {echo "selected";}?>
                       >Administrador</option>
-                    <option value="1" <?php if (set_value($tb_user['tipo'])=="1" ) {echo "selected";}?>
-                      >Usuario</option>
+                    <option value="1" <?php if ($tb_user['tipo']=="1" ) {echo "selected";}?>
+                      >Usuário</option>
                   </select>
                   <?php echo form_error('txt_conta'); ?>
                 </div>
@@ -130,10 +130,10 @@ if (isset($msg_banco)) {
                 <div class="form-group has-feedback <?php if (form_error('txt_grupo')) {echo " has-error ";};?>">
                   <label class="control-label">Grupos</label>
                   <select multiple class="form-control" placeholder="Grupo" name="txt_grupo">
-                    <option value="0">Grupo 1</option>
-                    <option value="1">Grupo 2</option>
-                    <option value="2">Grupo 3</option>
-                    <option value="3">Grupo 4</option>
+                    <option value="G1">Grupo 1</option>
+                    <option value="G2">Grupo 2</option>
+                    <option value="G3">Grupo 3</option>
+                    <option value="G4">Grupo 4</option>
                   </select>
                   <?php echo form_error('txt_grupo'); ?>
                 </div>

@@ -17,7 +17,8 @@
   <!-- Blue Skin -->
   <link rel="stylesheet" href="<?php echo base_url('assets/css/skin-blue.min.css') ?>">
   <!-- Custon CSS -->
-  <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css') ?>">
+  <link rel="stylesheet" href="<?php echo base_url('assets/css/select2.min.css') ?>">
+  
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
