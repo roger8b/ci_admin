@@ -1,5 +1,5 @@
 <?php
-class Cadastro_model extends CI_Model {
+class Ins_user_model extends CI_Model {
     function __construct() {
         parent::__construct();
     }

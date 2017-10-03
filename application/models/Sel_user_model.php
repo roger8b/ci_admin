@@ -1,5 +1,5 @@
 <?php
-class Lista_usuarios_model extends CI_Model {
+class Sel_user_model extends CI_Model {
 	function __construct() {
 		parent::__construct();
 	}
