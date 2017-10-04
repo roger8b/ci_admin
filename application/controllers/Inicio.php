@@ -42,3 +42,6 @@ class Inicio extends CI_Controller {
 
     }
 }
+
+// $this->form_validation->set_rules('txt_senha', 'Senha', 'trim|required|min_length[5]|matches[txt_conf_senha]');
+// $this->form_validation->set_rules('txt_conf_senha', 'Confirma Senha', 'trim|required');

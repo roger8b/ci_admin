@@ -80,32 +80,7 @@ if (isset($msg_banco)) {
               </div>
               <!-- ./Linha 4 -->
             </div>
-            <!-- Linha 5 -->
-            <div class="row">
-              <!-- Coluna 1 -->
-              <div class="col-md-6">
-                <!-- Senha -->
-                <div class="form-group has-feedback <?php if (form_error('txt_senha')) {echo " has-error ";};?>">
-                  <label class="control-label">Senha</label>
-                  <input type="password" class="form-control" placeholder="Senha" name="txt_senha">
-                  <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                  <?php echo form_error('txt_senha'); ?>
-                </div>
-                <!-- ./Coluna 1 -->
-              </div>
-              <!-- Coluna 2 -->
-              <div class="col-md-6">
-                <!-- Confirma senha -->
-                <div class="form-group has-feedback <?php if (form_error('txt_conf_senha')) {echo " has-error ";};?>">
-                  <label class="control-label">Confirme a senha</label>
-                  <input type="password" class="form-control" placeholder="Confirme a senha" name="txt_conf_senha">
-                  <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                  <?php echo form_error('txt_conf_senha'); ?>
-                </div>
-                <!-- ./Coluna 2 -->
-              </div>
-              <!-- ./Linha 5 -->
-            </div>
+            
             <!-- Linha 6 -->
             <div class="row">
               <!-- Coluna 1 -->
@@ -129,7 +104,7 @@ if (isset($msg_banco)) {
                 <!-- Grupo de Usuarios -->
                 <div class="form-group has-feedback <?php if (form_error('txt_grupo')) {echo " has-error ";};?>">
                   <label class="control-label">Grupos</label>
-                  <select multiple class="form-control" placeholder="Grupo" name="txt_grupo">
+                  <select multiple class="form-control" placeholder="Grupo" name="txt_grupo[]">
                     <option value="0">Grupo 1</option>
                     <option value="1">Grupo 2</option>
                     <option value="2">Grupo 3</option>

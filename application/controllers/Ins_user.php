@@ -8,6 +8,7 @@ class Ins_user extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		$this->load->model('Ins_user_model');
+		$this->load->library('cpf');
 	}
 
 	public function index() {
@@ -20,16 +21,17 @@ class Ins_user extends CI_Controller {
 	public function novo_usuario() {
 		// Regras de validação do Formulario de registro de usuário
 		$this->form_validation->set_rules('txt_nome', 'Nome', 'trim|required');
-		$this->form_validation->set_rules('txt_email', 'Email', 'trim|required');
-		$this->form_validation->set_rules('txt_cpf', 'CPF', 'trim|required|callback_valid_cpf');
-		$this->form_validation->set_rules('txt_crm', 'CRM', 'trim|required');
-		$this->form_validation->set_rules('txt_dt_nasc', 'Data de Nascimento', 'trim|required');
-		$this->form_validation->set_rules('txt_senha', 'Senha', 'trim|required|min_length[5]|matches[txt_conf_senha]');
-		$this->form_validation->set_rules('txt_conf_senha', 'Confirma Senha', 'trim|required');
+		$this->form_validation->set_rules('txt_email', 'Email', 'trim|valid_email|required');
+		$this->form_validation->set_rules('txt_cpf', 'CPF', 'trim|required|numeric|callback_valid_cpf');
+		$this->form_validation->set_rules('txt_crm', 'CRM', 'trim|numeric|required');
+		$this->form_validation->set_rules('txt_dt_nasc', 'Data de Nascimento', 'trim|required|callback_valid_dt_nasc');
 		$this->form_validation->set_rules('txt_conta', 'Tipo de Conta', 'trim|required');
 		$this->form_validation->set_rules('txt_grupo', 'Grupo de Usuários', 'trim|required');
 		$this->form_validation->set_message('valid_cpf', 'Número do CPF inválido!');
+		$this->form_validation->set_message('valid_dt_nasc', 'Data de Nascimento inválida!');
+
 		//Caso as informações do formulario estejam corretas organiza e faz insert no banco.
+
 		if ($this->form_validation->run() == FALSE) {
 			$dados['form_erro'] = validation_errors();
 		} else {
@@ -40,8 +42,11 @@ class Ins_user extends CI_Controller {
 				'crm' => $this->input->post('txt_crm'),
 				'dt_nasc' => $this->input->post('txt_dt_nasc'),
 				'senha' => md5($this->input->post('txt_senha')),
-				'Tipo' => $this->input->post('txt_conta'),
+				//Tipo de Conta 0 - Admin / 1 - User.
+				'tipo' => $this->input->post('txt_conta'),
 				'grupo' => $this->input->post('txt_grupo'),
+				// Status 0 - Primeiro login / 1 - ativo / 2 - inativo
+				'status' => 0,
 			);
 			// Retorno de informação do banco
 			$dados['msg_banco'] = $this->Ins_user_model->add_dados('user', $dados['parametros']);
@@ -87,5 +92,15 @@ class Ins_user extends CI_Controller {
 			return TRUE;
 		}
 
+	}
+
+	function valid_dt_nasc($dt){
+		// Verifica se a data de entrada é maior ou igual ao dia atual.
+        date_default_timezone_set("America/New_York");
+        if ($dt >= date("Y-m-d")){
+            return FALSE;
+        } else {
+            return TRUE;
+        }
 	}
 }
