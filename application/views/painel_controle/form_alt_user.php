@@ -46,7 +46,7 @@ if (isset($msg_banco)) {
               <div class="col-md-6">
                 <div class="form-group has-feedback <?php if (form_error('txt_cpf')) {echo " has-error ";};?>">
                   <label class="control-label">CPF</label>
-                  <input type="text" class="form-control" placeholder="CPF" name="txt_cpf" value="<?php echo $tb_user['cpf'] ?>">
+                  <input id="cpf" type="text" class="form-control" placeholder="CPF" name="txt_cpf" value="<?php echo $tb_user['cpf'] ?>">
                   <span class="glyphicon glyphicon-credit-card form-control-feedback"></span>
                   <?php echo form_error('txt_cpf'); ?>
                 </div>

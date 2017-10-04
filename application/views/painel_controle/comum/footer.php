@@ -7,9 +7,22 @@
 <script src="<?php echo base_url('assets/js/adminlte.min.js') ?> "></script>
 <!-- Select -->
 <script src="<?php echo base_url('assets/js/select2.full.min.js') ?> "></script>
-</body>
-</html>
+<!-- Input Mask -->
+<script src="<?php echo base_url('assets/js/jquery.inputmask.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/jquery.inputmask.date.extensions.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/jquery.inputmask.extensions.js') ?>"></script>
+
+
 
 <script type="text/javascript">
     $('select').select2();
-</script>
+    $(document).ready(function(){
+    $("#cpf").inputmask("999.999.999-99");
+    });
+ </script>
+
+ </body>
+</html>
+
+   
+
