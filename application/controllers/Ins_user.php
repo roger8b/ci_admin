@@ -8,7 +8,7 @@ class Ins_user extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		$this->load->model('Ins_user_model');
-		$this->load->library('Grupo');
+		$this->load->library('auxiliar');
 	}
 
 	public function index() {
@@ -39,13 +39,13 @@ class Ins_user extends CI_Controller {
 			$dados['parametros'] = array('id' => 'default',
 				'nome' => $this->input->post('txt_nome'),
 				'email' => $this->input->post('txt_email'),
-				'cpf' => $this->input->post('txt_cpf'),
+				'cpf' => $this->auxiliar->rem_format($this->input->post('txt_cpf')),
 				'crm' => $this->input->post('txt_crm'),
 				'dt_nasc' => $this->input->post('txt_dt_nasc'),
 				'senha' => md5("@primeiro"),
 				//Tipo de Conta 0 - Admin / 1 - User.
 				'tipo' => $this->input->post('txt_conta'),
-				'grupo' => $this->grupo->array_to_string($this->input->post('txt_grupo')),
+				'grupo' => $this->auxiliar->array_to_string($this->input->post('txt_grupo')),
 				// Status 0 - Primeiro login / 1 - ativo / 2 - inativo
 				'status' => 0,
 			);

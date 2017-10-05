@@ -15,7 +15,7 @@
 
 
 <script type="text/javascript">
-    $('select').select2();
+    $('#select').select2();
     $(document).ready(function(){
     $("#cpf").inputmask("999.999.999-99");
     });
