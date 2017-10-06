@@ -13,5 +13,10 @@ class Alt_user_model extends CI_Model {
 		$this->db->order_by('id', 'asc');
 		return $this->db->get($tabela)->result_array();
 	}
+    //Update
+    function update_dados($tabela, $id, $parametros) {
+        $this->db->where('id', $id);
+        return $this->db->update($tabela, $parametros);
+    }
 
 }

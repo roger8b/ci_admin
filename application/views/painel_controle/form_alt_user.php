@@ -105,7 +105,7 @@ if (isset($msg_banco)) {
                 <!-- Grupo de Usuarios -->
                 <div class="form-group has-feedback <?php if (form_error('txt_grupo')) {echo " has-error ";};?>">
                   <label  class="control-label">Grupos</label>
-                  <select id="select" multiple class="form-control" placeholder="Grupo" name="txt_grupo">
+                  <select id="select" multiple class="form-control" placeholder="Grupo" name="txt_grupo[]">
                     
                     <?php
                     // Carrega dados da tabela grupos / carrega dados selecionados pelo usuario 
