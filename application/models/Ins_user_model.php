@@ -23,5 +23,10 @@ class Ins_user_model extends CI_Model {
     function selec_dado($tabela, $id) {
         return $this->db->get_where($tabela, array('user_id' => $id))->row_array();
     }
+    //Select All
+    function selec_dados($tabela) {
+        $this->db->order_by('id', 'asc');
+        return $this->db->get($tabela)->result_array();
+    }
 
 }

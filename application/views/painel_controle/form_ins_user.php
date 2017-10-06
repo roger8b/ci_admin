@@ -105,11 +105,19 @@ if (isset($msg_banco)) {
                 <div class="form-group has-feedback <?php if (form_error('txt_grupo')) {echo " has-error ";};?>">
                   <label class="control-label">Grupos</label>
                   <select id="select" multiple class="form-control" placeholder="Grupo" name="txt_grupo[]">
-                    <option value="0">Grupo 1</option>
-                    <option value="1">Grupo 2</option>
-                    <option value="2">Grupo 3</option>
-                    <option value="3">Grupo 4</option>
-                  </select>
+                    <?php
+                    // Carrega dados da tabela grupos / carrega dados selecionados pelo usuario 
+                    $grupo = $txt_grupo;
+                     foreach ($tb_grupo as $k) {
+                      foreach ($grupo as $j) {
+                        if($k['id'] == $j){
+                          echo "<option selected value= {$k['id']} > {$k['nome']} </option>";
+                        } 
+                      }
+                       echo "<option value= {$k['id']} > {$k['nome']} </option>";
+                    }
+                     ?>
+                     </select>
                   <?php echo form_error('txt_grupo'); ?>
                 </div>
                 <!-- ./Coluna 2 -->
