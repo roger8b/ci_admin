@@ -41,7 +41,7 @@ class Alt_user extends CI_Controller {
 		}
 		$dados['titulo'] = "Alterar";
 		$dados['pg_header'] = "Editar Informações do Usuário";
-		$dados['_view'] = 'painel_controle/form_alt_user';
+		$dados['_view'] = 'painel_controle/formularios/form_alt_user';
 		$dados['tb_user'] = $this->Alt_user_model->selec_dado('user',$user_id);
 		$dados['tb_grupo'] = $this->Alt_user_model->selec_dados('grupo');
 		$this->load->view('painel_controle/index', $dados);

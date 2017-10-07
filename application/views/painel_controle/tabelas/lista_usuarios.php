@@ -3,7 +3,7 @@
         <div class="col-md-12">
             <div class="box">
                 <div class="box-body">
-                    <table class="table table-bordered  table-hover table-responsive text-center">
+                    <table id="tabela" class="table table-bordered  table-hover table-responsive text-center" cellspacing="0" width="100%">
                         <thead>
                             <tr>
                                 <th>id</th>

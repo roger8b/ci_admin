@@ -11,14 +11,33 @@
 <script src="<?php echo base_url('assets/js/jquery.inputmask.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/jquery.inputmask.date.extensions.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/jquery.inputmask.extensions.js') ?>"></script>
+<!-- Data tables -->
+<script src="<?php echo base_url('assets/js/jquery.dataTables.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/dataTables.bootstrap.min.js') ?>"></script>
 
 
 
 <script type="text/javascript">
+// Multiselect    
     $('#select').select2();
+// Mascara    
     $(document).ready(function(){
     $("#cpf").inputmask("999.999.999-99");
     });
+// Data tables
+    $(function () {
+    $('#tabela').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : true,
+      'ordering'    : true,
+      'info'        : false,
+      'autoWidth'   : true,
+      'select'      : true,
+      'scrollX'     : true,
+      
+    })
+  })
  </script>
 
  </body>

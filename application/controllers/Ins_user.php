@@ -14,7 +14,7 @@ class Ins_user extends CI_Controller {
 	public function index() {
 		$dados['titulo'] = "Cadastro";
 		$dados['pg_header'] = "Cadastrar novo usuário";
-		$dados['_view'] = 'painel_controle/form_ins_user';
+		$dados['_view'] = 'painel_controle/formularios/form_ins_user';
 		$dados['tb_grupo'] = $this->Ins_user_model->selec_dados('grupo');
 		$this->load->view('painel_controle/index', $dados);
 	}
@@ -57,7 +57,7 @@ class Ins_user extends CI_Controller {
 		}
 		$dados['titulo'] = "Cadastro";
 		$dados['pg_header'] = "Cadastrar novo usuário";
-		$dados['_view'] = 'painel_controle/form_ins_user';
+		$dados['_view'] = 'painel_controle/formularios/form_ins_user';
 		$dados['tb_grupo'] = $this->Ins_user_model->selec_dados('grupo');
 		$dados['txt_grupo'] = $this->input->post('txt_grupo');
 		$this->load->view('painel_controle/index', $dados);

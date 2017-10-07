@@ -18,6 +18,10 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/css/skin-blue.min.css') ?>">
   <!-- Custon CSS -->
   <link rel="stylesheet" href="<?php echo base_url('assets/css/select2.min.css') ?>">
+  <!-- Datatable -->
+  <link rel="stylesheet" href="<?php echo base_url('assets/css/dataTables.bootstrap.min.css') ?>">
+  <link rel="stylesheet" href="<?php echo base_url('assets/css/material.min.css') ?>">
+
   
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
