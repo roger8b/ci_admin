@@ -19,7 +19,9 @@
 
 <script type="text/javascript">
 // Multiselect    
-    $('#select').select2();
+    $('#select').select2({
+      theme: "bootstrap" 
+    });
 // Mascara    
     $(document).ready(function(){
     $("#cpf").inputmask("999.999.999-99");
@@ -35,6 +37,7 @@
       'autoWidth'   : true,
       'select'      : true,
       'scrollX'     : true,
+      'language'    : { "url": "<?php echo base_url('assets/plugins/data_tables/Portuguese-Brasil.json') ?>" }
       
     })
   })

@@ -1,7 +1,6 @@
-
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Sel_user extends CI_Controller
+class Sel_grupo extends CI_Controller
 
 {
  function __construct()
@@ -9,7 +8,7 @@ class Sel_user extends CI_Controller
   parent::__construct();
   $this->load->helper('form');
   $this->load->library('form_validation');
-  $this->load->model('Sel_user_model');
+  $this->load->model('Sel_grupo_model');
  }
 
  public
@@ -17,9 +16,9 @@ class Sel_user extends CI_Controller
  function index()
  {
   $dados['titulo'] = "Usuários";
-  $dados['pg_header'] = "Usuários do Sistema";
-  $dados['_view'] = 'painel_controle/tabelas/lista_usuarios';
-  $dados['tb_user'] = $this->Sel_user_model->selec_dados('user');
+  $dados['pg_header'] = "Usuarios do Sistema";
+  $dados['_view'] = 'painel_controle/tabelas/lista_grupos';
+  $dados['tb_user'] = $this->Sel_grupo_model->selec_dados('grupo');
   $this->load->view('painel_controle/index', $dados);
  }
 }

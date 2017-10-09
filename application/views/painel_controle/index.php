@@ -1,5 +1,4 @@
 <?php $this->load->view('painel_controle/comum/header')?>
-
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
     <!-- Main Header -->
@@ -15,8 +14,8 @@
       <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
         <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
+          <span class="sr-only">Toggle navigation</span>
+        </a>
       </nav>
     </header>
     <!-- Left side column. contains the logo and sidebar -->
@@ -47,11 +46,33 @@
         <!-- /.search form -->
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu" data-widget="tree">
-          <li class="header">HEADER</li>
-          <!-- Optionally, you can add icons to the links -->
-          <li class="active"><a href="<?php echo base_url('painel_controle') ?>"><i class="fa  fa-home"></i> <span>Home</span></a></li>
-          <li><a href="<?php echo base_url('painel_controle/cadastro') ?>"><i class="fa  fa-user-plus"></i> <span>Cadastro de Usuario</span></a></li>
-          <li><a href="<?php echo base_url('painel_controle/usuarios') ?>"><i class="fa fa-users"></i> <span>Lista de usuarios.</span></a></li>
+          <li class="active"> <a href="<?php echo base_url('painel_controle') ?>"><i class="fa  fa-home"></i> <span>Home</span></a></li>
+          
+          <li class="treeview">
+            <a href="#"><i class="fa fa-user"></i> <span>Usuários</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url('painel_controle/cadastro/usuario') ?>">
+              <i class=" fa fa-user-plus"></i> <span>Cadastro de Usuario</span></a></li>
+              <li><a href="<?php echo base_url('painel_controle/usuarios') ?>"><i class="fa fa-users"></i> <span>Lista de usuarios.</span></a></li>
+            </ul>
+          </li>
+          
+          <li class="treeview">
+            <a href="#"><i class="fa fa-group"></i> <span>Grupos</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url('painel_controle/cadastro/grupo') ?>">
+              <i class=" fa fa-plus"></i> <span>Cadastrar grupo</span></a></li>
+              <li><a href="<?php echo base_url('painel_controle/grupos') ?>"><i class="fa fa-users"></i> <span>Lista de Grupos</span></a></li>
+            </ul>
+          </li>
         </ul>
         <!-- /.sidebar-menu -->
       </section>
@@ -63,16 +84,15 @@
       <section class="content-header">
         <h1>
         <?php echo $pg_header; ?>
-      </h1>
+        </h1>
       </section>
       <!-- Main content -->
       <section class="content container-fluid">
         <?php
-if (isset($_view) && $_view) {
-  $this->load->view($_view);
-}
-
-?>
+        if (isset($_view) && $_view) {
+        $this->load->view($_view);
+        }
+        ?>
       </section>
       <!-- /.content -->
     </div>
@@ -84,7 +104,7 @@ if (isset($_view) && $_view) {
         Anything you want
       </div>
       <!-- Default to the left -->
-      <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+      <strong>Copyright &copy; 2017 <a href="#">Company</a>.</strong> All rights reserved.
     </footer>
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
@@ -93,68 +113,9 @@ if (isset($_view) && $_view) {
         <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
         <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
       </ul>
-      <!-- Tab panes -->
-      <div class="tab-content">
-        <!-- Home tab content -->
-        <div class="tab-pane active" id="control-sidebar-home-tab">
-          <h3 class="control-sidebar-heading">Recent Activity</h3>
-          <ul class="control-sidebar-menu">
-            <li>
-              <a href="javascript:;">
-              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                <p>Will be 23 on April 24th</p>
-              </div>
-            </a>
-            </li>
-          </ul>
-          <!-- /.control-sidebar-menu -->
-          <h3 class="control-sidebar-heading">Tasks Progress</h3>
-          <ul class="control-sidebar-menu">
-            <li>
-              <a href="javascript:;">
-                <h4 class="control-sidebar-subheading">
-                Custom Template Design
-                <span class="pull-right-container">
-                    <span class="label label-danger pull-right">70%</span>
-                  </span>
-              </h4>
-                <div class="progress progress-xxs">
-                  <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                </div>
-              </a>
-            </li>
-          </ul>
-          <!-- /.control-sidebar-menu -->
-        </div>
-        <!-- /.tab-pane -->
-        <!-- Stats tab content -->
-        <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-        <!-- /.tab-pane -->
-        <!-- Settings tab content -->
-        <div class="tab-pane" id="control-sidebar-settings-tab">
-          <form method="post">
-            <h3 class="control-sidebar-heading">General Settings</h3>
-            <div class="form-group">
-              <label class="control-sidebar-subheading">
-                Report panel usage
-                <input type="checkbox" class="pull-right" checked>
-              </label>
-              <p>
-                Some information about this general settings option
-              </p>
-            </div>
-            <!-- /.form-group -->
-          </form>
-        </div>
-        <!-- /.tab-pane -->
-      </div>
     </aside>
     <!-- /.control-sidebar -->
     <!-- Add the sidebar's background. This div must be placed
-  immediately after the control sidebar -->
+    immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
     <?php $this->load->view('painel_controle/comum/footer')?>

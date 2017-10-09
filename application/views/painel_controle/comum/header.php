@@ -16,8 +16,10 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/css/AdminLTE.min.css') ?>">
   <!-- Blue Skin -->
   <link rel="stylesheet" href="<?php echo base_url('assets/css/skin-blue.min.css') ?>">
-  <!-- Custon CSS -->
+  <!-- Select2 -->
   <link rel="stylesheet" href="<?php echo base_url('assets/css/select2.min.css') ?>">
+  <link rel="stylesheet" href="<?php echo base_url('assets/css/select2-bootstrap.min.css') ?>">
+
   <!-- Datatable -->
   <link rel="stylesheet" href="<?php echo base_url('assets/css/dataTables.bootstrap.min.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/css/material.min.css') ?>">

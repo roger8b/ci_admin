@@ -53,9 +53,15 @@ $route['default_controller'] = 'inicio';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['painel_controle'] = 'painel_controle';
-$route['painel_controle/cadastro'] = 'ins_user';
-$route['cadastro/novo_usuario'] = 'ins_user/novo_usuario';
+$route['painel_controle/cadastro/usuario'] = 'ins_user';
+$route['painel_controle/cadastrar/usuario'] = 'ins_user/ins_usuario';
 $route['painel_controle/usuarios'] = 'sel_user';
 $route['painel_controle/usuario/(:num)'] = 'alt_user/alterar/$1';
 $route['alterar/usuario/(:num)'] = 'alt_user/alterar/$1';
 $route['login'] = 'inicio/login';
+$route['painel_controle/cadastro/grupo'] = 'ins_grupo';
+$route['painel_controle/cadastrar/grupo'] = 'ins_grupo/ins_n_grupo';
+$route['painel_controle/grupos'] = 'sel_grupo';
+$route['painel_controle/grupo/(:num)'] = 'alt_grupo/alterar/$1';
+$route['painel_controle/alterar/grupo/(:num)'] = 'alt_grupo/alterar/$1';
+

@@ -1,5 +1,5 @@
 <?php
-class Sel_user_model extends CI_Model
+class Sel_grupo_model extends CI_Model
 
 {
  function __construct()

@@ -7,9 +7,7 @@
                         <thead>
                             <tr>
                                 <th>Nome</th>
-                                <th>Email</th>
-                                <th>CPF</th>
-                                <th>Conta</th>
+                                <th>Data Criação</th>
                                 <th>Status</th>
                                 <th>Editar</th>
                                 <th>Desativar</th>
@@ -17,37 +15,27 @@
                         </thead>
                         <tbody>
                             <?php foreach ($tb_user as $tb) {
-    ?>
+                            ?>
                             <tr>
                                 <td>
                                     <?php echo $tb['nome'] ?>
                                 </td>
                                 <td>
-                                    <?php echo $tb['email'] ?>
+                                    <?php echo date_format(new DateTime($tb['dt_criado']), 'd/m/Y') ?>
                                 </td>
                                 <td>
-                                    <?php echo $tb['cpf'] ?>
+                                    <?php  if($tb['status'] == 1){
+                                    echo "Ativo";
+                                    } else
+                                    { echo "Inativo";
+                                    } ?>
                                 </td>
                                 <td>
-                                    <?php  if($tb['tipo'] == 0){ 
-                                        echo "Admin";
-                                    } else 
-                                    { echo "Usuário";
-                                } ?>
+                                    <a href="<?php echo base_url('painel_controle/grupo/') .$tb['id']?>"><i class="fa fa-edit"></i></a>
                                 </td>
                                 <td>
-                                    <?php 
-                                      if($tb['status'] == 0){
-                                        echo "Criado";
-                                      } else if ($tb['status'] == 1){
-                                        echo "Ativo";
-                                      } else {
-                                        echo "Inativo";
-                                      }
-                                     ?>
+                                    <a href=""><i class="fa  fa-ban"></i></a>
                                 </td>
-                                <td><a href="<?php echo base_url('painel_controle/usuario/') .$tb['id']?>"><i class="fa fa-edit"></i></a></td>
-                                <td><a href=""><i class="fa  fa-ban"></i></a></td>
                             </tr>
                             <?php }?>
                         </tbody>
