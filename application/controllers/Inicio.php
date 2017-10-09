@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Inicio extends CI_Controller
 
 {
- function __construct()
+ public function __construct()
  {
   parent::__construct();
   $this->load->helper('form');
@@ -42,7 +42,7 @@ class Inicio extends CI_Controller
 
    // Verifica credenciais de usuario
 
-   $uresult = $this->user_model->verifica_usuario($email, $senha);
+   $uresult = $this->Inicio_model->verificar_usuario($email, $senha);
    if (count($uresult) > 0)
    {
 
@@ -62,7 +62,7 @@ class Inicio extends CI_Controller
     redirect('inicio/index');
    }
   }
-
+  $dados['titulo'] = "Login 2";
   $this->load->view('inicio/index', $dados);
  }
 }

@@ -13,12 +13,14 @@
     <?php echo form_open('inicio/login') ?>
 
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Email" name="txt_email">
+        <input type="email" class="form-control" placeholder="Email" name="txt_email" value=<?php echo set_value( 'txt_email') ?>>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        <?php echo form_error('txt_email'); ?>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password" name="txt_password">
+        <input type="password" class="form-control" placeholder="Password" name="txt_senha">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        <?php echo form_error('txt_senha'); ?>
       </div>
       <div class="row">
         <div class="col-xs-12">
