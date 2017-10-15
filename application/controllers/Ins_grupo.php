@@ -9,6 +9,7 @@ class Ins_grupo extends CI_Controller
   $this->load->helper('form');
   $this->load->library('form_validation');
   $this->load->model('Ins_grupo_model');
+  $this->load->model('User_model');
   $this->load->library('auxiliar');
  }
 
@@ -20,6 +21,7 @@ class Ins_grupo extends CI_Controller
   $dados['pg_header'] = "Cadastrar Grupo";
   $dados['_view'] = 'painel_controle/formularios/form_ins_grupo';
   $dados['tb_grupo'] = $this->Ins_grupo_model->selec_dados('grupo');
+  $dados['usuario'] = $this->User_model->get_user_by_id($this->session->userdata('uid'));
   $this->load->view('painel_controle/index', $dados);
  }
 

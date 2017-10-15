@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Inicio extends CI_Controller
+class User extends CI_Controller
 
 {
  public function __construct()
@@ -8,7 +8,7 @@ class Inicio extends CI_Controller
   parent::__construct();
   $this->load->helper('form');
   $this->load->library('form_validation');
-  $this->load->model('Inicio_model');
+  $this->load->model('User_model');
  }
 
  public
@@ -42,7 +42,7 @@ class Inicio extends CI_Controller
 
    // Verifica credenciais de usuario
 
-   $uresult = $this->Inicio_model->verificar_usuario($email, $senha);
+   $uresult = $this->User_model->get_user($email, $senha);
    if (count($uresult) > 0)
    {
 
@@ -50,7 +50,7 @@ class Inicio extends CI_Controller
 
     $sess_data = array(
      'login' => TRUE,
-     'uname' => $uresult[0]->fname,
+     'uname' => $uresult[0]->nome,
      'uid' => $uresult[0]->id
     );
     $this->session->set_userdata($sess_data);
@@ -65,9 +65,13 @@ class Inicio extends CI_Controller
   $dados['titulo'] = "Login 2";
   $this->load->view('inicio/index', $dados);
  }
+
+ function logout()
+  {
+        $data = array('login' => '', 'uname' => '', 'uid' => '');
+        $this->session->unset_userdata($data);
+        $this->session->sess_destroy();
+    redirect('/');
+  }
 }
-
-// $this->form_validation->set_rules('txt_senha', 'Senha', 'trim|required|min_length[5]|matches[txt_conf_senha]');
-// $this->form_validation->set_rules('txt_conf_senha', 'Confirma Senha', 'trim|required');
-
 

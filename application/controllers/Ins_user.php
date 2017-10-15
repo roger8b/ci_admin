@@ -9,6 +9,7 @@ class Ins_user extends CI_Controller
   $this->load->helper('form');
   $this->load->library('form_validation');
   $this->load->model('Ins_user_model');
+  $this->load->model('User_model');
   $this->load->library('auxiliar');
  }
 
@@ -17,9 +18,10 @@ class Ins_user extends CI_Controller
  function index()
  {
   $dados['titulo'] = "Cadastro";
-  $dados['pg_header'] = "Cadastrar novo usuÃ¡rio";
+  $dados['pg_header'] = "Cadastrar novo usuário";
   $dados['_view'] = 'painel_controle/formularios/form_ins_user';
   $dados['tb_grupo'] = $this->Ins_user_model->selec_dados('grupo');
+  $dados['usuario'] = $this->User_model->get_user_by_id($this->session->userdata('uid'));
   $this->load->view('painel_controle/index', $dados);
  }
 

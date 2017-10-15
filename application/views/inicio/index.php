@@ -10,7 +10,7 @@
   <div class="login-box-body">
     <p class="login-box-msg">Faça Login para Iniciar uma nova sessão</p>
 
-    <?php echo form_open('inicio/login') ?>
+    <?php echo form_open('login') ?>
 
       <div class="form-group has-feedback">
         <input type="email" class="form-control" placeholder="Email" name="txt_email" value=<?php echo set_value( 'txt_email') ?>>
