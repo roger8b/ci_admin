@@ -16,12 +16,6 @@ class Alt_senha extends CI_Controller
   {
    redirect('inicio');
   }
-
- //  $user = $this->User_model->get_user_by_id($this->session->userdata('uid'));
- //  if ($user[0]->tipo == 1)
- //  {
- //   redirect('painel_controle');
- //  }
   }
 
  public 
@@ -48,7 +42,8 @@ class Alt_senha extends CI_Controller
   {
    $dados['parametros'] = array(
     'senha' => md5($this->input->post('txt_senha_n')),
-    'senha_a' => md5($this->input->post('txt_senha_a')) ,
+    'senha_a' => md5($this->input->post('txt_senha_a')),
+    'status' => 1,
    );
 
    // Retorno de informação do banco

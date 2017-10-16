@@ -60,7 +60,7 @@ class User extends CI_Controller
    if (count($uresult) > 0)
    {
 
-    // Verifica se o statu do usuario
+    // Verifica se o status do usuario
 
     if ($uresult[0]->status == 2)
     {
@@ -77,7 +77,13 @@ class User extends CI_Controller
       'uid' => $uresult[0]->id
      );
      $this->session->set_userdata($sess_data);
+     if($uresult[0]->status == 0){
+      redirect("painel_controle/usuario/alterar/senha/".$uresult[0]->id);
+     }
+     else
+     {
      redirect("painel_controle");
+     }
     }
    }
    else
