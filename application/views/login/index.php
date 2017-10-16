@@ -33,8 +33,6 @@
         <!-- /.col -->
       </div>
     <?php echo form_close() ?>
-    <a href="<?php echo base_url('/'); ?>">Esqueceu a senha?</a><br>
-    <a href="<?php echo base_url('painel_controle'); ?>" class="text-center">Teste > Painel de Controle</a>
   </div>
   <!-- /.login-box-body -->
 </div>

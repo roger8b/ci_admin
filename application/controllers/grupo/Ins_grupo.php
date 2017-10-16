@@ -8,12 +8,19 @@ class Ins_grupo extends CI_Controller
   parent::__construct();
   $this->load->helper('form');
   $this->load->library('form_validation');
-  $this->load->model('Ins_grupo_model');
-  $this->load->model('User_model');
+  $this->load->model('grupo/Ins_grupo_model');
+  $this->load->model('login/User_model');
   $this->load->library('auxiliar');
-  $user =  $this->User_model->get_user_by_id($this->session->userdata('uid'));
-  if ($user[0]->tipo == 1) {
-    redirect('painel_controle');
+  $login_status = $this->session->userdata('login');
+  if ($login_status != TRUE)
+  {
+   redirect('inicio');
+  }
+
+  $user = $this->User_model->get_user_by_id($this->session->userdata('uid'));
+  if ($user[0]->tipo == 1)
+  {
+   redirect('painel_controle');
   }
  }
 
