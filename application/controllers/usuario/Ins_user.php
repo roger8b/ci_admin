@@ -49,9 +49,9 @@ class Ins_user extends CI_Controller
   $this->form_validation->set_rules('txt_crm', 'CRM', 'trim|numeric|required');
   $this->form_validation->set_rules('txt_dt_nasc', 'Data de Nascimento', 'trim|required|callback_valid_dt_nasc');
   $this->form_validation->set_rules('txt_conta', 'Tipo de Conta', 'trim|required');
-  $this->form_validation->set_rules('txt_grupo[]', 'Grupo de UsuÃ¡rios', 'trim|required');
-  $this->form_validation->set_message('valid_cpf', 'NÃºmero do CPF invÃ¡lido!');
-  $this->form_validation->set_message('valid_dt_nasc', 'Data de Nascimento invÃ¡lida!');
+  $this->form_validation->set_rules('txt_grupo[]', 'Grupo de Usuários', 'trim|required');
+  $this->form_validation->set_message('valid_cpf', 'Número do CPF inválido!');
+  $this->form_validation->set_message('valid_dt_nasc', 'Data de Nascimento inválida!');
 
   // Caso as informações do formulario estejam corretas organiza e faz insert no banco.
 
