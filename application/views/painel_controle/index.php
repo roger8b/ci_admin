@@ -51,6 +51,7 @@
               <li class="user-footer">
                 <div class="text-center">
                   <a href="<?php echo base_url('logout') ?>" class="btn btn-default btn-flat">Sair</a>
+                  <a href="<?php echo base_url('painel_controle/usuario/alterar/senha/').$usuario[0]->id ?>" class="btn btn-default btn-flat">Alterar Senha</a>
                 </div>
               </li>
             </ul>

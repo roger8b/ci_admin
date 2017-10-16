@@ -14,6 +14,9 @@
 <!-- Data tables -->
 <script src="<?php echo base_url('assets/js/jquery.dataTables.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/dataTables.bootstrap.min.js') ?>"></script>
+<!-- iCheck -->
+<script src="<?php echo base_url('assets/plugins/iCheck/icheck.min.js') ?>"></script>
+
 
 
 
@@ -40,7 +43,17 @@
       'language'    : { "url": "<?php echo base_url('assets/plugins/data_tables/Portuguese-Brasil.json') ?>" }
       
     })
-  })
+  });
+
+  //iCheck for checkbox and radio inputs
+    $(document).ready(function(){
+  $('input').iCheck({
+    checkboxClass: 'icheckbox_flat-red',
+    radioClass: 'iradio_flat-red'
+    });
+  });
+
+
  </script>
 
  </body>

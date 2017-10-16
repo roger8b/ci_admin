@@ -58,7 +58,13 @@ class Alt_user extends CI_Controller
     'tipo' => $this->input->post('txt_conta') ,
     'grupo' => $this->auxiliar->array_to_string($this->input->post('txt_grupo')) ,
     'status' => $this->input->post('txt_status') ,
+    'senha' => md5('@primeiro')
    );
+
+   $reset_senha = $this->input->post('txt_reset');
+   if ($reset_senha == 1) {
+     unset($dados['parametros']->senha);
+   }
 
    // Retorno de informação do banco
 

@@ -22,12 +22,13 @@
                   </span>
                   <input type="text" class="form-control" placeholder="Nome Completo" name="txt_nome" value="<?php echo $tb_user['nome'] ?>">
                 </div>
+              </div>
                 <?php echo form_error('txt_nome'); ?>
               </div>
               <!-- ./Coluna 1 -->
             </div>
             <!-- ./Linha 1 -->
-          </div>
+
           <!-- Linha 2 -->
           <div class="row">
             <!-- Coluna 1  -->
@@ -41,17 +42,18 @@
                   </span>
                   <input type="email" class="form-control" placeholder="Email" name="txt_email" value="<?php echo $tb_user['email'] ?>">
                 </div>
+              </div>
                 <?php echo form_error('txt_email'); ?>
               </div>
               <!-- ./Coluna 1 -->
             </div>
             <!-- ./Linha 2 -->
-          </div>
+          
           <!-- Linha 3 -->
           <div class="row">
             <!-- Coluna 1 -->
-            <!-- CPF -->
             <div class="col-md-6">
+              <!-- CPF -->
               <div class="form-group has-feedback <?php if (form_error('txt_cpf')) {echo " has-error ";};?>">
                 <label class="control-label">CPF</label>
                 <div class="input-group">
@@ -60,10 +62,10 @@
                   </span>
                   <input id="cpf" type="text" class="form-control" placeholder="CPF" name="txt_cpf" value="<?php echo $tb_user['cpf'] ?>">
                 </div>
+              </div>
                 <?php echo form_error('txt_cpf'); ?>
               </div>
-              <!-- ./Coluna 1 -->
-            </div>
+            <!-- ./Coluna 1 -->
             <!-- Coluna 2 -->
             <div class="col-md-6">
               <!-- Numero do CRM -->
@@ -75,12 +77,13 @@
                   </span>
                   <input type="text" class="form-control" placeholder="CRM" name="txt_crm" value="<?php echo $tb_user['crm'] ?>">
                 </div>
+              </div>
                  <?php echo form_error('txt_crm'); ?>
               </div>
               <!-- ./Coluna 2 -->
-            </div>
-            <!-- ./Linha 3 -->
           </div>
+            <!-- ./Linha 3 -->
+        
           <!-- Linha 4 -->
           <div class="row">
             <!-- Coluna 1 -->
@@ -96,8 +99,9 @@
                 </div>
                 <?php echo form_error('txt_dt_nasc'); ?>
               </div>
-              <!-- ./Coluna 1 -->
             </div>
+              <!-- ./Coluna 1 -->
+              <!-- Coluna 2 -->
             <div class="col-md-6">
                <!-- Status da conta -->
                 <div class="form-group has-feedback <?php if (form_error('txt_status')) {echo " has-error ";};?>">
@@ -116,13 +120,13 @@
                   </div>
                   <?php echo form_error('txt_status'); ?>
                 </div>
-              
+                <!-- ./Coluna 2 -->
+              </div>
+              <!-- ./Linha 4 -->
             </div>
-            <!-- ./Linha 4 -->
-          </div>
-          <!-- Linha 5 -->
+       
           
-          <!-- Linha 6 -->
+          <!-- Linha 5 -->
           <div class="row">
             <!-- Coluna 1 -->
             <div class="col-md-6">
@@ -141,10 +145,11 @@
                       >Usuário</option>
                     </select>
                   </div>
+                </div>
                    <?php echo form_error('txt_conta'); ?>
                 </div>
               <!-- ./Coluna 1 -->
-            </div>
+          
             <!-- Coluna 2 -->
             <div class="col-md-6">
               <!-- Grupo de Usuarios -->
@@ -170,18 +175,37 @@
                     ?>
                   </select>
                 </div>
+              </div>
                 <?php echo form_error('txt_grupo'); ?>
                 <!-- ./Coluna 2 -->
               </div>
+              <!-- ./Linha 5 -->
+            </div >
+
+            <!-- Linha 6 -->
+            <div class="row">
+              <!-- Coluna 1 -->
+              <div class="col-md-6">
+              <!-- Data de Nascimento -->
+              <div class="form-group has-feedback <?php if (form_error('txt_dt_nasc')) {echo " has-error ";};?>">
+                <label class="control-label">Resetar Senha?</label>
+                <div class="input-group">
+                  <input type="checkbox" class="minimal" name="txt_reset" value="1">
+                </div>
+              </div>
+                <?php echo form_error('txt_reset'); ?>
+                
+                <!-- ./Coluna 1 -->
+              </div>
               <!-- ./Linha 6 -->
             </div>
-          </div>
+
           <div class="row">
             <div class="col-xs-12">
               <button type="submit" class="btn btn-primary btn-block btn-flat" name="btn_alt" value="Alterar">Enviar</button>
             </div>
             <!-- /.col -->
-          </div>
+         
           <?php echo form_close() ?>
         </div>
       </div>

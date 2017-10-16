@@ -59,6 +59,7 @@ $route['painel_controle/cadastro/usuario'] = 'usuario/ins_user';
 $route['painel_controle/cadastrar/usuario'] = 'usuario/ins_user/ins_usuario';
 $route['alterar/usuario/(:num)'] = 'usuario/alt_user/alterar/$1';
 $route['painel_controle/usuario/alterar/(:num)'] = 'usuario/alt_user/alterar/$1';
+$route['painel_controle/usuario/alterar/senha/(:num)'] = 'usuario/alt_senha/alterar/$1';
 
 // Grupo
 $route['painel_controle/grupos'] = 'grupo/sel_grupo';
