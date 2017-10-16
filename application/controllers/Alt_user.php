@@ -11,6 +11,11 @@ class Alt_user extends CI_Controller
   $this->load->model('Alt_user_model');
   $this->load->model('User_model');
   $this->load->library('auxiliar');
+  $user =  $this->User_model->get_user_by_id($this->session->userdata('uid'));
+  if ($user[0]->tipo == 1) {
+    redirect('painel_controle');
+  }
+
  }
 
  public
@@ -46,6 +51,7 @@ class Alt_user extends CI_Controller
 
     'tipo' => $this->input->post('txt_conta') ,
     'grupo' => $this->auxiliar->array_to_string($this->input->post('txt_grupo')) ,
+    'status' => $this->input->post('txt_status'),
    );
 
    // Retorno de informação do banco

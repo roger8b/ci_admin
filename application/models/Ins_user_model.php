@@ -20,7 +20,7 @@ class Ins_user_model extends CI_Model
   {
    return array(
     'tipo' => 'alert alert-danger',
-    'msg' => 'JÃ¡ existe um usuÃ¡rio com este email!'
+    'msg' => 'Já existe um usuário com este email!'
    );
   }
   else
@@ -30,7 +30,7 @@ class Ins_user_model extends CI_Model
   {
    return array(
     'tipo' => 'alert alert-danger',
-    'msg' => 'JÃ¡ existe um usuÃ¡rio com este CPF!'
+    'msg' => 'Já existe um usuário com este CPF!'
    );
   }
   else
@@ -40,7 +40,7 @@ class Ins_user_model extends CI_Model
   {
    return array(
     'tipo' => 'alert alert-danger',
-    'msg' => 'JÃ¡ existe um usuÃ¡rio com este CRM!'
+    'msg' => 'Já existe um usuário com este CRM!'
    );
   }
   else
@@ -48,7 +48,7 @@ class Ins_user_model extends CI_Model
    $this->db->insert($tabela, $parametros);
    return array(
     'tipo' => 'alert alert-success',
-    'msg' => 'UsuÃ¡rio registrado com sucesso!'
+    'msg' => 'usuário registrado com sucesso!'
    );
   }
  }

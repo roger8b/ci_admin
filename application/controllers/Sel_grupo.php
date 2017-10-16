@@ -10,6 +10,10 @@ class Sel_grupo extends CI_Controller
   $this->load->library('form_validation');
   $this->load->model('Sel_grupo_model');
   $this->load->model('User_model');
+  $user =  $this->User_model->get_user_by_id($this->session->userdata('uid'));
+  if ($user[0]->tipo == 1) {
+    redirect('painel_controle');
+  }
  }
 
  public

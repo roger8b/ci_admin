@@ -7,7 +7,7 @@
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="<?php echo base_url("painel_controle") ?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -47,27 +47,9 @@
                   <?php echo $usuario[0]->nome; ?>
                 </p>
               </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
+                <div class="text-center">
                   <a href="<?php echo base_url('logout') ?>" class="btn btn-default btn-flat">Sair</a>
                 </div>
               </li>
@@ -104,20 +86,21 @@
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="active"> <a href="<?php echo base_url('painel_controle') ?>"><i class="fa  fa-home"></i> <span>Home</span></a></li>
-          
+
+        <?php if($usuario[0]->tipo == 0){ ?>
           <li class="treeview">
             <a href="#"><i class="fa fa-user"></i> <span>Usuários</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
+          <ul class="treeview-menu ">
             <li><a href="<?php echo base_url('painel_controle/cadastro/usuario') ?>">
-              <i class=" fa fa-user-plus"></i> <span>Cadastro de Usuario</span></a></li>
-              <li><a href="<?php echo base_url('painel_controle/usuarios') ?>"><i class="fa fa-users"></i> <span>Lista de usuarios.</span></a></li>
+              <i class=" fa fa-user-plus"></i> <span>Cadastro de Usuário</span></a></li>
+              <li><a href="<?php echo base_url('painel_controle/usuarios') ?>"><i class="fa fa-users"></i> <span>Lista de usuários.</span></a></li>
             </ul>
           </li>
-          
+      
           <li class="treeview">
             <a href="#"><i class="fa fa-group"></i> <span>Grupos</span>
             <span class="pull-right-container">
@@ -130,6 +113,7 @@
               <li><a href="<?php echo base_url('painel_controle/grupos') ?>"><i class="fa fa-users"></i> <span>Lista de Grupos</span></a></li>
             </ul>
           </li>
+         <?php } ?>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -141,18 +125,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Page Header
-        <small>Optional description</small>
+        <?php echo $pg_header; ?>
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
-      </ol>
     </section>
 
     <!-- Main content -->
     <section class="content container-fluid">
-      <?php  echo $_SESSION['uname'] ?>
 
       <!--------------------------
         | Your Page Content Here |

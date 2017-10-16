@@ -11,6 +11,10 @@ class Ins_user extends CI_Controller
   $this->load->model('Ins_user_model');
   $this->load->model('User_model');
   $this->load->library('auxiliar');
+  $user =  $this->User_model->get_user_by_id($this->session->userdata('uid'));
+  if ($user[0]->tipo == 1) {
+    redirect('painel_controle');
+  }
  }
 
  public
@@ -64,7 +68,7 @@ class Ins_user extends CI_Controller
     'tipo' => $this->input->post('txt_conta') ,
     'grupo' => $this->auxiliar->array_to_string($this->input->post('txt_grupo')) ,
 
-    // Status 0 - Criado / 1 - ativo / 2 - Desativado
+    // Status 0 - Criado / 1 - ativo / 2 - Bloqueado
 
     'status' => 0,
    );
@@ -83,6 +87,7 @@ class Ins_user extends CI_Controller
   $dados['_view'] = 'painel_controle/formularios/form_ins_user';
   $dados['tb_grupo'] = $this->Ins_user_model->selec_dados('grupo');
   $dados['txt_grupo'] = $this->input->post('txt_grupo');
+  $dados['usuario'] = $this->User_model->get_user_by_id($this->session->userdata('uid'));
   $this->load->view('painel_controle/index', $dados);
  }
 

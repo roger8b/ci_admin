@@ -21,8 +21,8 @@
                     <i class="fa fa-user" aria-hidden="true"></i>
                   </span>
                   <input type="text" class="form-control" placeholder="Nome Completo" name="txt_nome" value="<?php echo $tb_user['nome'] ?>">
-                  <?php echo form_error('txt_nome'); ?>
                 </div>
+                <?php echo form_error('txt_nome'); ?>
               </div>
               <!-- ./Coluna 1 -->
             </div>
@@ -40,8 +40,8 @@
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                   </span>
                   <input type="email" class="form-control" placeholder="Email" name="txt_email" value="<?php echo $tb_user['email'] ?>">
-                  <?php echo form_error('txt_email'); ?>
                 </div>
+                <?php echo form_error('txt_email'); ?>
               </div>
               <!-- ./Coluna 1 -->
             </div>
@@ -59,8 +59,8 @@
                     <i class="fa fa-id-card" aria-hidden="true"></i>
                   </span>
                   <input id="cpf" type="text" class="form-control" placeholder="CPF" name="txt_cpf" value="<?php echo $tb_user['cpf'] ?>">
-                  <?php echo form_error('txt_cpf'); ?>
                 </div>
+                <?php echo form_error('txt_cpf'); ?>
               </div>
               <!-- ./Coluna 1 -->
             </div>
@@ -74,8 +74,8 @@
                     <i class="fa fa-user-md" aria-hidden="true"></i>
                   </span>
                   <input type="text" class="form-control" placeholder="CRM" name="txt_crm" value="<?php echo $tb_user['crm'] ?>">
-                  <?php echo form_error('txt_crm'); ?>
                 </div>
+                 <?php echo form_error('txt_crm'); ?>
               </div>
               <!-- ./Coluna 2 -->
             </div>
@@ -93,10 +93,30 @@
                     <i class="fa fa-calendar" aria-hidden="true"></i>
                   </span>
                   <input type="date" class="form-control" placeholder="Data de Nascimento" name="txt_dt_nasc" value="<?php echo $tb_user['dt_nasc'] ?>">
-                  <?php echo form_error('txt_dt_nasc'); ?>
                 </div>
+                <?php echo form_error('txt_dt_nasc'); ?>
               </div>
               <!-- ./Coluna 1 -->
+            </div>
+            <div class="col-md-6">
+               <!-- Status da conta -->
+                <div class="form-group has-feedback <?php if (form_error('txt_status')) {echo " has-error ";};?>">
+                  <label class="control-label">Status da Conta</label>
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    </span>
+                    <select class="form-control" placeholder="Grupo" name="txt_status">
+                      <option value="" disabled selected>Status da Conta</option>
+                      <option value="1" <?php if ($tb_user['status']== "1" ) {echo "selected";}?>
+                      >Ativar</option>
+                      <option value="2" <?php if ($tb_user['status']== "2" ) {echo "selected";}?>
+                      >Bloquear</option>
+                    </select>
+                  </div>
+                  <?php echo form_error('txt_status'); ?>
+                </div>
+              
             </div>
             <!-- ./Linha 4 -->
           </div>
@@ -106,23 +126,23 @@
           <div class="row">
             <!-- Coluna 1 -->
             <div class="col-md-6">
-              <!-- Tipo de Conta -->
-              <div class="form-group has-feedback <?php if (form_error('txt_conta')) {echo " has-error ";};?>">
-                <label class="control-label">Tipo de Conta</label>
-                <div class="input-group">
-                  <span class="input-group-addon">
-                    <i class="fa fa-user-circle" aria-hidden="true"></i>
-                  </span>
-                  <select class="form-control" placeholder="Grupo" name="txt_conta">
-                    <option value="" disabled selected>Tipo de Conta</option>
-                    <option value="0" <?php if ($tb_user['tipo']=="0" ) {echo "selected";}?>
-                    >Administrador</option>
-                    <option value="1" <?php if ($tb_user['tipo']=="1" ) {echo "selected";}?>
-                    >Usuário</option>
-                  </select>
-                  <?php echo form_error('txt_conta'); ?>
+                <!-- Tipo de Conta -->
+                <div class="form-group has-feedback <?php if (form_error('txt_conta')) {echo " has-error ";};?>">
+                  <label class="control-label">Tipo de Conta</label>
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    </span>
+                    <select class="form-control" placeholder="Grupo" name="txt_conta">
+                      <option value="" disabled selected>Tipo de Conta</option>
+                      <option value="0" <?php if ($tb_user['tipo']=="0" ) {echo "selected";}?>
+                      >Administrador</option>
+                      <option value="1" <?php if ($tb_user['tipo']=="1" ) {echo "selected";}?>
+                      >Usuário</option>
+                    </select>
+                  </div>
+                   <?php echo form_error('txt_conta'); ?>
                 </div>
-              </div>
               <!-- ./Coluna 1 -->
             </div>
             <!-- Coluna 2 -->
@@ -149,9 +169,8 @@
                     }
                     ?>
                   </select>
-                  
-                  <?php echo form_error('txt_grupo'); ?>
                 </div>
+                <?php echo form_error('txt_grupo'); ?>
                 <!-- ./Coluna 2 -->
               </div>
               <!-- ./Linha 6 -->

@@ -12,7 +12,6 @@
                                 <th>Conta</th>
                                 <th>Status</th>
                                 <th>Editar</th>
-                                <th>Desativar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,12 +41,14 @@
                                       } else if ($tb['status'] == 1){
                                         echo "Ativo";
                                       } else {
-                                        echo "Inativo";
+                                        echo "Bloqueado";
                                       }
                                      ?>
                                 </td>
-                                <td><a href="<?php echo base_url('painel_controle/usuario/') .$tb['id']?>"><i class="fa fa-edit"></i></a></td>
-                                <td><a href=""><i class="fa  fa-ban"></i></a></td>
+                                <td><a href="
+                                    <?php echo base_url('painel_controle/usuario/alterar/') .$tb['id']?>"><i class="fa fa-edit"></i>
+                                </a>
+                                </td>
                             </tr>
                             <?php }?>
                         </tbody>

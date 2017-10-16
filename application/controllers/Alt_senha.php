@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Alt_grupo extends CI_Controller
+class Alt_senha extends CI_Controller
 
 {
  function __construct()

@@ -1,5 +1,5 @@
 <!-- header -->
-<?php $this->load->view('inicio/comum/header')?>
+<?php $this->load->view('login/comum/header')?>
 
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -9,6 +9,10 @@
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Faça Login para Iniciar uma nova sessão</p>
+
+    <?php if (isset($_SESSION['msg'])) {
+      echo $_SESSION['msg'];
+    } ?>
 
     <?php echo form_open('login') ?>
 
@@ -36,5 +40,5 @@
 </div>
 <!-- /.login-box -->
 <!-- footer -->
-<?php $this->load->view('inicio/comum/footer')?>
+<?php $this->load->view('login/comum/footer')?>
 

@@ -21,8 +21,8 @@
                     <i class="fa fa-user" aria-hidden="true"></i>
                   </span>
                   <input type="text" class="form-control" placeholder="Nome Completo" name="txt_nome" value=<?php echo set_value( 'txt_nome') ?>>
-                  <?php echo form_error('txt_nome'); ?>
                 </div>
+                <?php echo form_error('txt_nome'); ?>
               </div>
               <!-- ./Coluna 1 -->
             </div>
@@ -40,8 +40,8 @@
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                   </span>
                   <input type="email" class="form-control" placeholder="Email" name="txt_email" value=<?php echo set_value( 'txt_email') ?>>
-                  <?php echo form_error('txt_email'); ?>
                 </div>
+                <?php echo form_error('txt_email'); ?>
               </div>
               <!-- ./Coluna 1 -->
             </div>
@@ -59,8 +59,8 @@
                     <i class="fa fa-id-card" aria-hidden="true"></i>
                   </span>
                   <input id="cpf" type="text" class="form-control" placeholder="CPF" name="txt_cpf" value=<?php echo set_value( 'txt_cpf') ?>>
-                  <?php echo form_error('txt_cpf'); ?>
-                </div>
+                  </div>
+                <?php echo form_error('txt_cpf'); ?>
               </div>
               <!-- ./Coluna 1 -->
             </div>
@@ -74,8 +74,8 @@
                     <i class="fa fa-user-md" aria-hidden="true"></i>
                   </span>
                   <input type="text" class="form-control" placeholder="CRM" name="txt_crm" value=<?php echo set_value( 'txt_crm') ?>>
-                  <?php echo form_error('txt_crm'); ?>
                 </div>
+                <?php echo form_error('txt_crm'); ?>
               </div>
               <!-- ./Coluna 2 -->
             </div>
@@ -93,8 +93,8 @@
                     <i class="fa fa-calendar" aria-hidden="true"></i>
                   </span>
                   <input type="date" class="form-control" placeholder="Data de Nascimento" name="txt_dt_nasc" value=<?php echo set_value( 'txt_dt_nasc') ?>>
-                  <?php echo form_error('txt_dt_nasc'); ?>
                 </div>
+                <?php echo form_error('txt_dt_nasc'); ?>
               </div>
               <!-- ./Coluna 1 -->
             </div>
@@ -119,8 +119,8 @@
                     <option value="1" <?php if (set_value( 'txt_conta')=="1" ) {echo "selected";}?>
                     >Usuario</option>
                   </select>
-                  <?php echo form_error('txt_conta'); ?>
                 </div>
+                <?php echo form_error('txt_conta'); ?>
               </div>
               <!-- ./Coluna 1 -->
             </div>
@@ -147,8 +147,8 @@
                     }
                     ?>
                   </select>
-                  <?php echo form_error('txt_grupo'); ?>
                 </div>
+                 <?php echo form_error('txt_grupo'); ?>
               </div>
               <!-- ./Coluna 2 -->
             </div>

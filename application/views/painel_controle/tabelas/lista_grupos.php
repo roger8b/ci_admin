@@ -10,7 +10,6 @@
                                 <th>Data Criação</th>
                                 <th>Status</th>
                                 <th>Editar</th>
-                                <th>Desativar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -32,9 +31,6 @@
                                 </td>
                                 <td>
                                     <a href="<?php echo base_url('painel_controle/grupo/') .$tb['id']?>"><i class="fa fa-edit"></i></a>
-                                </td>
-                                <td>
-                                    <a href=""><i class="fa  fa-ban"></i></a>
                                 </td>
                             </tr>
                             <?php }?>
