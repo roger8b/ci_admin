@@ -127,7 +127,7 @@
             <!-- Coluna 2 -->
             <div class="col-md-6">
               <!-- Grupo de Usuarios -->
-              <div class="form-group has-feedback <?php if (form_error('txt_grupo')) {echo " has-error ";};?>">
+              <div class="form-group has-feedback <?php if (form_error('txt_grupo[]')) {echo " has-error ";};?>">
                 <label class="control-label">Grupos</label>
                 <div class="input-group">
                   <span class="input-group-addon">
@@ -148,7 +148,7 @@
                     ?>
                   </select>
                 </div>
-                 <?php echo form_error('txt_grupo'); ?>
+                 <?php echo form_error('txt_grupo[]'); ?>
               </div>
               <!-- ./Coluna 2 -->
             </div>
