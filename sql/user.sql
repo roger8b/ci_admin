@@ -1,3 +1,7 @@
+CREATE SCHEMA `ci_admin` DEFAULT CHARACTER SET utf8 ;
+
+use `ci_admin`;
+
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(12) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) NOT NULL,
