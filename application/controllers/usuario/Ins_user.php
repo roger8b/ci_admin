@@ -83,6 +83,7 @@ class Ins_user extends CI_Controller
    // Retorno de informação do banco
 
    $dados['msg_banco'] = $this->Ins_user_model->add_dados('user', $dados['parametros']);
+   
 
    // Chamada de função fazer insert no banco
 

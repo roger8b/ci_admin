@@ -11,6 +11,7 @@ class Ins_user_model extends CI_Model
 
  function add_dados($tabela, $parametros)
  {
+  $msg = array();
 
   // Verifica email / cpf / crm jÃ¡ esta cadastrado no banco.
 
@@ -18,41 +19,29 @@ class Ins_user_model extends CI_Model
    'email' => $parametros['email']
   ))->row_array())
   {
-   return array(
-    'tipo' => 'alert alert-danger',
-    'msg' => 'Já existe um usuário com este email!'
-   );
+   array_push($msg,'<div class="alert alert-danger" role="alert">Já existe um usuário com este Email!</div>' ); 
   }
-  else
   if ($this->db->get_where($tabela, array(
    'cpf' => $parametros['cpf']
   ))->row_array())
   {
-   return array(
-    'tipo' => 'alert alert-danger',
-    'msg' => 'Já existe um usuário com este CPF!'
-   );
+    array_push($msg,'<div class="alert alert-danger" role="alert">Já existe um usuário com este CPF!</div>' );
   }
-  else
   if ($this->db->get_where($tabela, array(
    'crm' => $parametros['crm']
   ))->row_array())
   {
-   return array(
-    'tipo' => 'alert alert-danger',
-    'msg' => 'Já existe um usuário com este CRM!'
-   );
+    array_push($msg,'<div class="alert alert-danger" role="alert">Já existe um usuário com este CRM!</div>');
   }
-  else
-  {
+  
+ if(count($msg) == 0){
    $this->db->insert($tabela, $parametros);
-   return array(
-    'tipo' => 'alert alert-success',
-    'msg' => 'usuário registrado com sucesso!'
-   );
-  }
+   array_push($msg,'<div class="alert alert-success" role="alert">Usuário registrado com sucesso!</div>');
+  return $msg;
  }
-
+ else
+  return $msg;
+ }
  // Select + Where
 
  function selec_dado($tabela, $id)

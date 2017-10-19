@@ -6,7 +6,9 @@
           <?php
           // Mostra mensagem de alerta
           if (isset($msg_banco)) {
-          echo '<div class="' . $msg_banco['tipo'] . '" role="alert">' . $msg_banco['msg'] . '</div>';
+          foreach ($msg_banco as $msg) {
+            echo $msg;
+          }
           }?>
           <?php echo form_open('painel_controle/cadastrar/usuario') ?>
           <!-- Linha 1 -->
