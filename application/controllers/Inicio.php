@@ -8,6 +8,8 @@ class Inicio extends CI_Controller
  function __construct()
  {
   parent::__construct();
+  $this->load->model('inicio/Inicio_model');
+  $this->Inicio_model->get_admin();
   $login_status = $this->session->userdata('login');
   if ($login_status == TRUE)
   {
