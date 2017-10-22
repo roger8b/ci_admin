@@ -28,57 +28,37 @@ class Alt_user_model extends CI_Model
 
  function update_dados($tabela, $id, $parametros)
  {
-  $dados = $this->db->get_where($tabela, array(
-   'id' => $id
+  $consulta = $this->db->get_where($tabela, array(
+   'id' => $id  
   ))->row_array();
 
+  $msg = array();
 
-  if ($dados['email'] != $parametros['email'])
-  {
-   if ($this->db->get_where($tabela, array(
-    'email' => $parametros['email']
-   ))->row_array())
-   {
-    return array(
-     'tipo' => 'alert alert-danger',
-     'msg' => 'Já existe um usuário com este email!'
-    );
-   }
+  // Verifica duplicidade no banco
+  if($consulta['email'] != $parametros['email']){
+    if($this->db->get_where($tabela, array('email' => $parametros['email']))->row_array()){
+     array_push($msg,'<div class="alert alert-danger" role="alert">Já existe um usuário com este Email!</div>' );
+    }
   }
-
-  if ($dados['cpf'] != $parametros['cpf'])
-  {
-   if ($this->db->get_where($tabela, array(
-    'cpf' => $parametros['cpf']
-   ))->row_array())
-   {
-    return array(
-     'tipo' => 'alert alert-danger',
-     'msg' => 'Já existe um usuário com este CPF!'
-    );
-   }
+  if($consulta['cpf'] != $parametros['cpf']){
+    if($this->db->get_where($tabela, array('cpf' => $parametros['cpf']))->row_array()){
+     array_push($msg,'<div class="alert alert-danger" role="alert">Já existe um usuário com este CPF!</div>' );
+    }
+  }
+  if($consulta['crm'] != $parametros['crm']){
+    if($this->db->get_where($tabela, array('crm' => $parametros['crm']))->row_array()){
+     array_push($msg,'<div class="alert alert-danger" role="alert">Já existe um usuário com este CRM!</div>' );
+    }
   }
 
-  if ($dados['crm'] != $parametros['crm'])
-  {
-   if ($this->db->get_where($tabela, array(
-    'crm' => $parametros['crm']
-   ))->row_array())
-   {
-    return array(
-     'tipo' => 'alert alert-danger',
-     'msg' => 'Já existe um usuário com este CRM!'
-    );
-   }
+  if(count($msg) == 0){
+    $this->db->where('id', $id);
+    $this->db->update($tabela, $parametros);
+    array_push($msg,'<div class="alert alert-danger" role="alert">Dados alterados com sucesso!!!</div>' );
+    return $msg;
   }
-  else
-  {
-   $this->db->where('id', $id);
-   $this->db->update($tabela, $parametros);
-   return array(
-    'tipo' => 'alert alert-success',
-    'msg' => 'Dados do usuário alterados com sucesso!'
-   );
+  else{
+    return $msg;
   }
- }
+}
 }

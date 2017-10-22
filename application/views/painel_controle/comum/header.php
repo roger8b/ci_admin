@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/css/dataTables.bootstrap.min.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/css/material.min.css') ?>">
   <!-- Icheck -->
-  <link rel="stylesheet" href="<?php echo base_url('assets/plugins/iCheck/All.css') ?>">
+  <link rel="stylesheet" href="<?php echo base_url('assets/plugins/iCheck/all.css') ?>">
   
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
