@@ -12,44 +12,28 @@ class Ins_grupo_model extends CI_Model
 
  function add_dados($tabela, $parametros)
  {
+  $msg = array();
 
-  // Verifica email / cpf / crm já esta cadastrado no banco.
+  // Verifica se nome já existe no banco
 
   if ($this->db->get_where($tabela, array(
    'nome' => $parametros['nome']
   ))->row_array())
   {
-   return array(
-    'tipo' => 'alert alert-danger',
-    'msg' => 'Já existe um grupo com este nome!'
-   );
+   array_push($msg,'<div class="alert alert-danger" role="alert">Já existe um grupo com este Nome!</div>' ); 
   }
-  else
-  {
+  
+ if(count($msg) == 0){
    $this->db->insert($tabela, $parametros);
-   return array(
-    'tipo' => 'alert alert-success',
-    'msg' => 'Grupo registrado com sucesso!'
-   );
-  }
+   array_push($msg,'<div class="alert alert-success" role="alert">Grupo registrado com sucesso!</div>');
+  return $msg;
  }
-
- // Select + Where
-
- function selec_dado($tabela, $id)
- {
-  return $this->db->get_where($tabela, array(
-   'user_id' => $id
-  ))->row_array();
- }
-
- // Select All
-
- function selec_dados($tabela)
- {
-  $this->db->order_by('id', 'asc');
-  return $this->db->get($tabela)->result_array();
+ else
+  return $msg;
  }
 }
+
+ 
+ 
 
 

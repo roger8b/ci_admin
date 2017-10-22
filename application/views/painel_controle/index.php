@@ -98,7 +98,7 @@
           <ul class="treeview-menu ">
             <li><a href="<?php echo base_url('painel_controle/cadastro/usuario') ?>">
               <i class=" fa fa-user-plus"></i> <span>Cadastro de Usuário</span></a></li>
-              <li><a href="<?php echo base_url('painel_controle/usuarios') ?>"><i class="fa fa-users"></i> <span>Lista de usuários.</span></a></li>
+              <li><a href="<?php echo base_url('painel_controle/usuarios') ?>"><i class="fa fa-users"></i> <span>Lista de Usuários.</span></a></li>
             </ul>
           </li>
       
@@ -110,7 +110,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url('painel_controle/cadastro/grupo') ?>">
-              <i class=" fa fa-plus"></i> <span>Cadastrar grupo</span></a></li>
+              <i class=" fa fa-plus"></i> <span>Cadastrar Grupo</span></a></li>
               <li><a href="<?php echo base_url('painel_controle/grupos') ?>"><i class="fa fa-users"></i> <span>Lista de Grupos</span></a></li>
             </ul>
           </li>

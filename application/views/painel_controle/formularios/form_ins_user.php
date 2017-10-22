@@ -119,7 +119,7 @@
                     <option value="0" <?php if (set_value( 'txt_conta')=="0" ) {echo "selected";}?>
                     >Administrador</option>
                     <option value="1" <?php if (set_value( 'txt_conta')=="1" ) {echo "selected";}?>
-                    >Usuario</option>
+                    >Usuário</option>
                   </select>
                 </div>
                 <?php echo form_error('txt_conta'); ?>

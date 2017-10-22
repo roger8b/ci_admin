@@ -28,27 +28,27 @@ class Alt_grupo_model extends CI_Model
 
  function update_dados($tabela, $id, $parametros)
  {
-  $dados = $this->db->get_where($tabela, array(
-   'id' => $id
+  $consulta = $this->db->get_where($tabela, array(
+   'id' => $id  
   ))->row_array();
-  if ($dados['nome'] != $parametros['nome'])
-  {
-   if ($this->db->get_where($tabela, array(
-    'nome' => $parametros['nome']
-   ))->row_array())
-   {
-    return array(
-     'tipo' => 'alert alert-danger',
-     'msg' => 'Já existe um grupo com este nome!'
-    );
-   }
+
+  $msg = array();
+
+  // Verifica duplicidade no banco
+  if($consulta['nome'] != $parametros['nome']){
+    if($this->db->get_where($tabela, array('nome' => $parametros['nome']))->row_array()){
+     array_push($msg,'<div class="alert alert-danger" role="alert">Já existe um Grupo com este nome!</div>' );
+    }
   }
-  else
-  {
-   $this->db->where('id', $id);
-   $this->db->update($tabela, $parametros);
-   return "Dados do grupo alterado com sucesso!";
+  if(count($msg) == 0){
+    $this->db->where('id', $id);
+    $this->db->update($tabela, $parametros);
+    array_push($msg,'<div class="alert alert-danger" role="alert">Dados alterados com sucesso!!!</div>' );
+    return $msg;
   }
- }
+  else{
+    return $msg;
+  }
 }
 
+}

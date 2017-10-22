@@ -3,11 +3,15 @@
     <div class="col-md-6 col-offset-md-6">
       <div class="box">
         <div class="box-body">
+
           <?php
           // Mostra mensagem de alerta
           if (isset($msg_banco)) {
-          echo '<div class="' . $msg_banco['tipo'] . '" role="alert">' . $msg_banco['msg'] . '</div>';
+          foreach ($msg_banco as $msg) {
+            echo $msg;
+          }
           }?>
+
           <?php echo form_open('painel_controle/cadastrar/grupo') ?>
           <!-- Linha 1 -->
           <div class="row">
