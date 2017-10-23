@@ -1,34 +1,34 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 class Inicio extends CI_Controller
 
 {
- public
+    public
 
- function __construct()
- {
-  parent::__construct();
-  $this->load->model('inicio/Inicio_model');
-  $this->Inicio_model->get_admin();
-  $login_status = $this->session->userdata('login');
-  if ($login_status == TRUE)
-  {
-   $data = array(
-    'login' => '',
-    'uname' => '',
-    'uid' => ''
-   );
-   $this->session->unset_userdata($data);
-   $this->session->sess_destroy();
-   redirect('inicio');
-  }
- }
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->model('inicio/Inicio_model');
+        $this->Inicio_model->get_admin();
+        $login_status = $this->session->userdata('login');
+        if ($login_status == TRUE) {
+            $data = array(
+                'login' => '',
+                'uname' => '',
+                'uid' => ''
+            );
+            $this->session->unset_userdata($data);
+            $this->session->sess_destroy();
+            redirect('inicio');
+        }
+    }
 
- public
+    public
 
- function index()
- {
-  $dados['titulo'] = "Login";
-  redirect('inicio');
- }
+    function index()
+    {
+        $dados['titulo'] = "Login";
+        redirect('inicio');
+    }
 }

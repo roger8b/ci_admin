@@ -1,17 +1,18 @@
 <?php
+
 class Sel_grupo_model extends CI_Model
 
 {
- function __construct()
- {
-  parent::__construct();
- }
+    function __construct()
+    {
+        parent::__construct();
+    }
 
- // Select All
+    // Select All
 
- function selec_dados($tabela)
- {
-  $this->db->order_by('id', 'asc');
-  return $this->db->get($tabela)->result_array();
- }
+    function selec_dados($tabela)
+    {
+        $this->db->order_by('id', 'asc');
+        return $this->db->get($tabela)->result_array();
+    }
 }
