@@ -30,7 +30,6 @@ class Ins_grupo extends CI_Controller
         $dados['titulo'] = "Cadastro";
         $dados['pg_header'] = "Cadastrar Grupo";
         $dados['_view'] = 'painel_controle/formularios/form_ins_grupo';
-        $dados['tb_grupo'] = $this->Ins_grupo_model->selec_dados('grupo');
         $dados['usuario'] = $this->User_model->get_user_by_id($this->session->userdata('uid'));
         $this->load->view('painel_controle/index', $dados);
     }
