@@ -44,7 +44,7 @@ class Alt_grupo_model extends CI_Model
         if (count($msg) == 0) {
             $this->db->where('id', $id);
             $this->db->update($tabela, $parametros);
-            array_push($msg, '<div class="alert alert-danger" role="alert">Dados alterados com sucesso!!!</div>');
+            array_push($msg, '<div class="alert alert-success" role="alert">Dados alterados com sucesso!!!</div>');
             return $msg;
         } else {
             return $msg;

@@ -42,6 +42,12 @@ class Alt_user extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $dados['form_erro'] = validation_errors();
         } else {
+            $status = $this->input->post('txt_status');
+            $dt_desativado = NULL;
+            if ($status == 2){
+                $dt_desativado = date('Y-m-d');
+            }
+
             $dados['parametros'] = array(
                 'nome' => $this->input->post('txt_nome'),
                 'email' => $this->input->post('txt_email'),
@@ -54,7 +60,8 @@ class Alt_user extends CI_Controller
                 'tipo' => $this->input->post('txt_conta'),
                 'grupo' => $this->auxiliar->array_to_string($this->input->post('txt_grupo')),
                 'status' => $this->input->post('txt_status'),
-                'senha' => md5('@primeiro')
+                'senha' => md5('@primeiro'),
+                'dt_desativado' => $dt_desativado,
             );
 
             $reset_senha = $this->input->post('txt_reset');

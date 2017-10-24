@@ -57,7 +57,7 @@ class Ins_user extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $dados['form_erro'] = validation_errors();
         } else {
-            $dados['parametros'] = array(
+            $dados['parametros'] = [
                 'id' => 'default',
                 'nome' => $this->input->post('txt_nome'),
                 'email' => $this->input->post('txt_email'),
@@ -74,7 +74,8 @@ class Ins_user extends CI_Controller
                 // Status 0 - Criado / 1 - ativo / 2 - Bloqueado
 
                 'status' => 0,
-            );
+                'dt_criado' => date('Y-m-d')
+            ];
 
             // Retorno de informação do banco
 
