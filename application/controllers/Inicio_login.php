@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Inicio extends CI_Controller
+class Inicio_login extends CI_Controller
 
 {
     public
@@ -10,6 +10,7 @@ class Inicio extends CI_Controller
     {
         parent::__construct();
         $this->load->model('inicio/Inicio_model');
+        $this->load->helper('form');
         $this->Inicio_model->get_admin();
         $login_status = $this->session->userdata('login');
         if ($login_status == TRUE) {
@@ -29,6 +30,8 @@ class Inicio extends CI_Controller
     function index()
     {
         $dados['titulo'] = "Login";
-        redirect('inicio');
+        $dados['_view'] = 'login/formularios/login';
+        $dados['pg_header'] = "Login";
+        $this->load->view('login/index', $dados);
     }
 }

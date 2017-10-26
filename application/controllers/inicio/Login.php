@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User extends CI_Controller
+class Login extends CI_Controller
 
 {
     public
@@ -25,17 +25,15 @@ class User extends CI_Controller
         }
     }
 
-    public
-
-    function index()
+    public function index()
     {
         $dados['titulo'] = "Login";
+        $dados['_view'] = 'login/formularios/login';
+        $dados['pg_header'] = "Login";
         $this->load->view('login/index', $dados);
     }
 
-    public
-
-    function login()
+    public function login()
     {
 
         // Regras de validação do formulario login
@@ -78,9 +76,11 @@ class User extends CI_Controller
                 }
             } else {
                 $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Nome do Usuário ou Senha Invalidos</div>');
+                redirect("inicio");
             }
 
             $dados['titulo'] = "Login";
+            $dados['pg_header'] = "Login";
             $this->load->view('login/index', $dados);
         }
     }
