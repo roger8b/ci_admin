@@ -78,7 +78,7 @@ class Cadastro extends CI_Controller
         $dados['titulo'] = "Cadastro";
         $dados['pg_header'] = "Cadastro";
         $dados['_view'] = 'login/formularios/cadastro';
-        $dados['usuario'] = $this->User_model->get_user_by_id($this->session->userdata('uid'));
+        //$dados['usuario'] = $this->User_model->get_user_by_id($this->session->userdata('uid'));
         $this->load->view('login/index', $dados);
 
     }

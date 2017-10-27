@@ -12,10 +12,6 @@
         foreach ($msg_banco as $msg) {
             echo $msg;
         }
-        if ($status == 1){
-            //sleep(5);
-            redirect('inicio');
-        }
     }?>
 
     <?php echo form_open('cadastro/criar') ?>
@@ -106,7 +102,7 @@
                   <span class="input-group-addon">
                     <i class="fa fa-calendar" aria-hidden="true"></i>
                   </span>
-                    <input type="date" class="form-control" placeholder="Data de Nascimento" name="txt_dt_nasc" value=<?php echo set_value( 'txt_dt_nasc') ?>>
+                    <input type="text" id="datepicker" class="form-control" placeholder="Data de Nascimento" name="txt_dt_nasc" value=<?php echo set_value( 'txt_dt_nasc') ?>>
                 </div>
                 <?php echo form_error('txt_dt_nasc'); ?>
             </div>
@@ -163,3 +159,4 @@
 </div>
 <!-- /.login-box-body -->
 </div>
+

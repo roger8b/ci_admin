@@ -16,7 +16,10 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/css/AdminLTE.min.css') ?>">
   <!-- iCheck -->
   <link rel="stylesheet" href="<?php echo base_url('assets/css/blue.css') ?>">
-
+  <!-- jquery-confirm-master -->
+  <link rel="stylesheet" href="<?php echo base_url('assets/plugins/jquery-confirm-master/dist/jquery-confirm.min.css') ?>">
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap-datepicker.min.css') ?>">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
