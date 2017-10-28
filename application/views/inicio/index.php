@@ -1,5 +1,5 @@
 <!-- header -->
-<?php $this->load->view('login/comum/header')?>
+<?php $this->load->view('inicio/comum/header')?>
 
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -17,5 +17,5 @@
 
 <!-- /.login-box -->
 <!-- footer -->
-<?php $this->load->view('login/comum/footer')?>
+<?php $this->load->view('inicio/comum/footer')?>
 

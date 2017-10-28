@@ -10,7 +10,7 @@ class Alt_senha extends CI_Controller
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->model('usuario/Alt_senha_model');
-        $this->load->model('login/User_model');
+        $this->load->model('inicio/Login_model');
         $this->load->library('auxiliar');
         $login_status = $this->session->userdata('login');
         if ($login_status != TRUE) {
@@ -55,7 +55,7 @@ class Alt_senha extends CI_Controller
         $dados['pg_header'] = "Alterar Senha";
         $dados['_view'] = 'painel_controle/formularios/form_alt_senha';
         $dados['tb_user'] = $this->Alt_senha_model->selec_dado('user', $user_id);
-        $dados['usuario'] = $this->User_model->get_user_by_id($this->session->userdata('uid'));
+        $dados['usuario'] = $this->Login_model->get_user_by_id($this->session->userdata('uid'));
         $this->load->view('painel_controle/index', $dados);
     }
 

@@ -102,7 +102,7 @@
                   <span class="input-group-addon">
                     <i class="fa fa-calendar" aria-hidden="true"></i>
                   </span>
-                    <input type="text" id="datepicker" class="form-control" placeholder="Data de Nascimento" name="txt_dt_nasc" value=<?php echo set_value( 'txt_dt_nasc') ?>>
+                    <input type="date" class="form-control" placeholder="Data de Nascimento" name="txt_dt_nasc" value=<?php echo set_value( 'txt_dt_nasc') ?>>
                 </div>
                 <?php echo form_error('txt_dt_nasc'); ?>
             </div>
@@ -135,7 +135,7 @@
         <div class="col-md-12">
             <!-- Rep. Senha -->
             <div class="form-group has-feedback <?php if (form_error('txt_senha_c')) {echo " has-error ";};?>">
-                <label class="control-label">Confirmar Senha</label>
+                <label class="control-label">Confirme a Senha</label>
                 <div class="input-group">
                   <span class="input-group-addon">
                     <i class="fa fa-key" aria-hidden="true"></i>

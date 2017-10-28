@@ -9,7 +9,7 @@ class Cadastro extends CI_Controller
         parent::__construct();
         $this->load->helper('form');
         $this->load->library('form_validation');
-        $this->load->model('login/User_model');
+        $this->load->model('inicio/Login_model');
         $this->load->model('inicio/Cadastro_model');
         $this->load->library('auxiliar');
         $login_status = $this->session->userdata('login');
@@ -28,9 +28,9 @@ class Cadastro extends CI_Controller
     public function index()
     {
         $dados['titulo'] = "Cadastro";
-        $dados['_view'] = 'login/formularios/cadastro';
+        $dados['_view'] = 'inicio/formularios/cadastro';
         $dados['pg_header'] = "Cadastro";
-        $this->load->view('login/index', $dados);
+        $this->load->view('inicio/index', $dados);
 
     }
 
@@ -77,9 +77,9 @@ class Cadastro extends CI_Controller
 
         $dados['titulo'] = "Cadastro";
         $dados['pg_header'] = "Cadastro";
-        $dados['_view'] = 'login/formularios/cadastro';
-        //$dados['usuario'] = $this->User_model->get_user_by_id($this->session->userdata('uid'));
-        $this->load->view('login/index', $dados);
+        $dados['_view'] = 'inicio/formularios/cadastro';
+        //$dados['usuario'] = $this->Login_model->get_user_by_id($this->session->userdata('uid'));
+        $this->load->view('inicio/index', $dados);
 
     }
 

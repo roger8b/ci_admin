@@ -10,14 +10,14 @@ class Alt_grupo extends CI_Controller
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->model('grupo/Alt_grupo_model');
-        $this->load->model('login/User_model');
+        $this->load->model('inicio/Login_model');
         $this->load->library('auxiliar');
         $login_status = $this->session->userdata('login');
         if ($login_status != TRUE) {
             redirect('inicio');
         }
 
-        $user = $this->User_model->get_user_by_id($this->session->userdata('uid'));
+        $user = $this->Login_model->get_user_by_id($this->session->userdata('uid'));
         if ($user[0]->tipo == 1) {
             redirect('painel_controle');
         }
@@ -52,7 +52,7 @@ class Alt_grupo extends CI_Controller
         $dados['pg_header'] = "Editar Informações do Grupo";
         $dados['_view'] = 'painel_controle/formularios/form_alt_grupo';
         $dados['tb_grupo'] = $this->Alt_grupo_model->selec_dado('grupo', $grupo_id);
-        $dados['usuario'] = $this->User_model->get_user_by_id($this->session->userdata('uid'));
+        $dados['usuario'] = $this->Login_model->get_user_by_id($this->session->userdata('uid'));
         $this->load->view('painel_controle/index', $dados);
     }
 }

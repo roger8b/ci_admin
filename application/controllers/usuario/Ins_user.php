@@ -10,14 +10,14 @@ class Ins_user extends CI_Controller
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->model('usuario/Ins_user_model');
-        $this->load->model('login/User_model');
+        $this->load->model('inicio/Login_model');
         $this->load->library('auxiliar');
         $login_status = $this->session->userdata('login');
         if ($login_status != TRUE) {
             redirect('inicio');
         }
 
-        $user = $this->User_model->get_user_by_id($this->session->userdata('uid'));
+        $user = $this->Login_model->get_user_by_id($this->session->userdata('uid'));
         if ($user[0]->tipo == 1) {
             redirect('painel_controle');
         }
@@ -69,7 +69,7 @@ class Ins_user extends CI_Controller
         $dados['_view'] = 'painel_controle/formularios/form_ins_user';
         $dados['tb_grupo'] = $this->Ins_user_model->selec_dados('grupo');
         $dados['txt_grupo'] = $this->input->post('txt_grupo');
-        $dados['usuario'] = $this->User_model->get_user_by_id($this->session->userdata('uid'));
+        $dados['usuario'] = $this->Login_model->get_user_by_id($this->session->userdata('uid'));
         $this->load->view('painel_controle/index', $dados);
     }
 

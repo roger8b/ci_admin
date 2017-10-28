@@ -9,7 +9,7 @@ class Painel_controle extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('login/User_model');
+        $this->load->model('inicio/Login_model');
         $login_status = $this->session->userdata('login');
         if ($login_status != TRUE) {
             redirect('inicio');
@@ -20,7 +20,7 @@ class Painel_controle extends CI_Controller
     {
         $dados['titulo'] = "Painel de Controle";
         $dados['pg_header'] = "Painel de Controle";
-        $dados['usuario'] = $this->User_model->get_user_by_id($this->session->userdata('uid'));
+        $dados['usuario'] = $this->Login_model->get_user_by_id($this->session->userdata('uid'));
         $this->load->view('painel_controle/index', $dados);
     }
 }

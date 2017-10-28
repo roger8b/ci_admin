@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $lang['ftp_no_connection'] = 'Não foi possível localizar um ID de conexão válido. Por favor tenha certeza que você está conectado antes de executar qualquer arquivo de rotina.';
 $lang['ftp_unable_to_connect'] = 'Não foi possível conectar ao seu servidor FTP usando o endereço fornecido.';
-$lang['ftp_unable_to_login'] = 'Não foi possível fazer login em seu servidor FTP. Por favor verifique seu usuário e senha.';
+$lang['ftp_unable_to_login'] = 'Não foi possível fazer inicio em seu servidor FTP. Por favor verifique seu usuário e senha.';
 $lang['ftp_unable_to_mkdir'] = 'Não foi possível criar o diretório que você especificou.';
 $lang['ftp_unable_to_changedir'] = 'Não foi possível mundar diretórios.';
 $lang['ftp_unable_to_chmod'] = 'Não foi possível configurar permissões de arquivo. Por favor verifique o seu caminho.';

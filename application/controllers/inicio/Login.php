@@ -11,7 +11,7 @@ class Login extends CI_Controller
         parent::__construct();
         $this->load->helper('form');
         $this->load->library('form_validation');
-        $this->load->model('login/User_model');
+        $this->load->model('inicio/Login_model');
         $login_status = $this->session->userdata('login');
         if ($login_status == TRUE) {
             $data = array(
@@ -28,15 +28,15 @@ class Login extends CI_Controller
     public function index()
     {
         $dados['titulo'] = "Login";
-        $dados['_view'] = 'login/formularios/login';
+        $dados['_view'] = 'inicio/formularios/inicio';
         $dados['pg_header'] = "Login";
-        $this->load->view('login/index', $dados);
+        $this->load->view('inicio/index', $dados);
     }
 
     public function login()
     {
 
-        // Regras de validação do formulario login
+        // Regras de validação do formulario inicio
 
         $this->form_validation->set_rules('txt_email', 'Email', 'trim|required');
         $this->form_validation->set_rules('txt_senha', 'Senha', 'trim|required');
@@ -51,7 +51,7 @@ class Login extends CI_Controller
 
             // Verifica credenciais de usuario
 
-            $uresult = $this->User_model->get_user($email, $senha);
+            $uresult = $this->Login_model->get_user($email, $senha);
             if (count($uresult) > 0) {
 
                 // Verifica se o status do usuario
@@ -81,7 +81,7 @@ class Login extends CI_Controller
 
             $dados['titulo'] = "Login";
             $dados['pg_header'] = "Login";
-            $this->load->view('login/index', $dados);
+            $this->load->view('inicio/index', $dados);
         }
     }
 

@@ -30,8 +30,8 @@ class Inicio_login extends CI_Controller
     function index()
     {
         $dados['titulo'] = "Login";
-        $dados['_view'] = 'login/formularios/login';
+        $dados['_view'] = 'inicio/formularios/login';
         $dados['pg_header'] = "Login";
-        $this->load->view('login/index', $dados);
+        $this->load->view('inicio/index', $dados);
     }
 }
