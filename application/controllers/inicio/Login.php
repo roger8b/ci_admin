@@ -28,7 +28,7 @@ class Login extends CI_Controller
     public function index()
     {
         $dados['titulo'] = "Login";
-        $dados['_view'] = 'inicio/formularios/inicio';
+        $dados['_view'] = 'inicio/formularios/login';
         $dados['pg_header'] = "Login";
         $this->load->view('inicio/index', $dados);
     }

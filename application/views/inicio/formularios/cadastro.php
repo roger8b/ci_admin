@@ -1,5 +1,5 @@
 <!-- login-box-body -->
-<div class="login-box-body">
+<div class="login-box-body" id="div1">
     <p class="login-box-msg"></p>
 
     <?php if (isset($_SESSION['msg'])) {
