@@ -1,7 +1,7 @@
 <!-- header -->
 <?php $this->load->view('inicio/comum/header')?>
 
-<body class="hold-transition login-page">
+<body class="hold-transition login-page fadeIn">
 <div class="login-box">
   <div class="login-logo">
     <b><?php echo $pg_header?></b>
