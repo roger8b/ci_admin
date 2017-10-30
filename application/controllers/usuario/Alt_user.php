@@ -39,6 +39,7 @@ class Alt_user extends CI_Controller
         $this->form_validation->set_rules('txt_grupo[]', 'Grupo de Usuários', 'trim|required');
         $this->form_validation->set_message('valid_cpf', 'Número do CPF invalido');
         $this->form_validation->set_message('valid_dt_nasc', 'Data de Nascimento invalida!');
+
         if ($this->form_validation->run() == FALSE) {
             $dados['form_erro'] = validation_errors();
         } else {
@@ -47,8 +48,8 @@ class Alt_user extends CI_Controller
             if ($status == 2){
                 $dt_desativado = date('Y-m-d');
             }
-
-            $dados['parametros'] = array(
+            $reset_senha = $this->input->post('txt_reset');
+            $dados['parametros'] = [
                 'nome' => $this->input->post('txt_nome'),
                 'email' => $this->input->post('txt_email'),
                 'cpf' => $this->auxiliar->rem_format($this->input->post('txt_cpf')),
@@ -60,13 +61,11 @@ class Alt_user extends CI_Controller
                 'tipo' => $this->input->post('txt_conta'),
                 'grupo' => $this->auxiliar->array_to_string($this->input->post('txt_grupo')),
                 'status' => $this->input->post('txt_status'),
-                'senha' => md5('@primeiro'),
+                'senha' => md5('1234567'),
                 'dt_desativado' => $dt_desativado,
-            );
-
-            $reset_senha = $this->input->post('txt_reset');
-            if ($reset_senha == 1) {
-                unset($dados['parametros']->senha);
+            ];
+            if ($reset_senha != 1) {
+                unset($dados['parametros']['senha']);
             }
 
             // Retorno de informação do banco

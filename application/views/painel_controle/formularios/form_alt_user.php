@@ -190,8 +190,8 @@
             <div class="row">
               <!-- Coluna 1 -->
               <div class="col-md-6">
-              <!-- Data de Nascimento -->
-              <div class="form-group has-feedback <?php if (form_error('txt_dt_nasc')) {echo " has-error ";};?>">
+              <!-- Reset Senha -->
+              <div class="form-group has-feedback">
                 <label class="control-label">Resetar Senha?</label>
                 <div class="input-group">
                   <input type="checkbox" class="minimal" name="txt_reset" value="1">
