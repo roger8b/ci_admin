@@ -83,6 +83,10 @@ class Login extends CI_Controller
             $dados['pg_header'] = "Login";
             $this->load->view('inicio/index', $dados);
         }
+        $dados['titulo'] = "Login";
+        $dados['_view'] = 'inicio/formularios/login';
+        $dados['pg_header'] = "Login";
+        $this->load->view('inicio/index', $dados);
     }
 
     function logout()

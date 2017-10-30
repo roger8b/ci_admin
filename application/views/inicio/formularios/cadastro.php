@@ -1,6 +1,6 @@
 <!-- login-box-body -->
 <div class="login-box-body" id="div1">
-    <p class="login-box-msg"></p>
+    <p class="login-box-msg">Preencha seus dados e efetue seu cadastro</p>
 
     <?php if (isset($_SESSION['msg'])) {
         echo $_SESSION['msg'];

@@ -4,7 +4,7 @@
 <body class="hold-transition login-page fadeIn">
 <div class="login-box">
   <div class="login-logo">
-    <b><?php echo $pg_header?></b>
+      <b>DR Oncall</b><br>
   </div>
   <!-- /.login-logo -->
 <!-- Conteudo-->

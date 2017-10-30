@@ -8,12 +8,12 @@
 
 <?php echo form_open('login') ?>
 
-<div class="form-group has-feedback">
+<div class="form-group has-feedback <?php if (form_error('txt_email')) {echo " has-error ";};?>">
     <input type="email" class="form-control" placeholder="Email" name="txt_email" value=<?php echo set_value( 'txt_email') ?>>
     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
     <?php echo form_error('txt_email'); ?>
 </div>
-<div class="form-group has-feedback">
+<div class="form-group has-feedback <?php if (form_error('txt_senha')) {echo " has-error ";};?>">
     <input type="password" class="form-control" placeholder="Password" name="txt_senha">
     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
     <?php echo form_error('txt_senha'); ?>
