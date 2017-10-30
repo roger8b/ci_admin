@@ -8,16 +8,11 @@
   </div>
   <!-- /.login-logo -->
 <!-- Conteudo-->
+
         <?php
         if (isset($_view) && $_view) {
             $this->load->view($_view);
         }
-
-        $teste['varteste'] = ['nome' => 'roger' , 'tel' => '986683063'];
-        //var_dump($teste);
-        var_dump($teste['varteste']);
-        unset($teste['varteste']['nome']);
-        var_dump($teste['varteste']);
         ?>
 
 <!-- /.login-box -->
