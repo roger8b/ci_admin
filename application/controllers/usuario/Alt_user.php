@@ -11,7 +11,6 @@ class Alt_user extends CI_Controller
         $this->load->library('form_validation');
         $this->load->model('usuario/Alt_user_model');
         $this->load->model('inicio/Login_model');
-        $this->load->library('auxiliar');
         $login_status = $this->session->userdata('login');
         if ($login_status != TRUE) {
             redirect('inicio');
@@ -29,14 +28,12 @@ class Alt_user extends CI_Controller
     {
 
         // Regras de validação do Formulario de registro de usuário
-
         $this->form_validation->set_rules('txt_nome', 'Nome', 'trim|required');
         $this->form_validation->set_rules('txt_email', 'Email', 'trim|valid_email|required');
         $this->form_validation->set_rules('txt_cpf', 'CPF', 'trim|required|callback_valid_cpf');
         $this->form_validation->set_rules('txt_crm', 'CRM', 'trim|numeric|required');
         $this->form_validation->set_rules('txt_dt_nasc', 'Data de Nascimento', 'trim|required|callback_valid_dt_nasc');
         $this->form_validation->set_rules('txt_conta', 'Tipo de Conta', 'trim|required');
-        $this->form_validation->set_rules('txt_grupo[]', 'Grupo de Usuários', 'trim|required');
         $this->form_validation->set_message('valid_cpf', 'Número do CPF invalido');
         $this->form_validation->set_message('valid_dt_nasc', 'Data de Nascimento invalida!');
 
@@ -54,34 +51,28 @@ class Alt_user extends CI_Controller
                 'email' => $this->input->post('txt_email'),
                 'cpf' => $this->auxiliar->rem_format($this->input->post('txt_cpf')),
                 'crm' => $this->input->post('txt_crm'),
-                'dt_nasc' => $this->input->post('txt_dt_nasc'),
+                'dt_nascimento' => $this->input->post('txt_dt_nasc'),
 
                 // Tipo de Conta 0 - Admin / 1 - User.
 
                 'tipo' => $this->input->post('txt_conta'),
-                'grupo' => $this->auxiliar->array_to_string($this->input->post('txt_grupo')),
+                'grupo' => '' , // Fazer alteração.
                 'status' => $this->input->post('txt_status'),
                 'senha' => md5('1234567'),
-                'dt_desativado' => $dt_desativado,
             ];
             if ($reset_senha != 1) {
                 unset($dados['parametros']['senha']);
             }
+            // Faz o update
+            $dados['msg_banco'] = $this->Alt_user_model->update_registro('user', $user_id, $dados['parametros']);
 
-            // Retorno de informação do banco
-
-            $dados['msg_banco'] = $this->Alt_user_model->update_dados('user', $user_id, $dados['parametros']);
-
-            // Chamada de função fazer update no banco
-
-            $this->Alt_user_model->update_dados('user', $user_id, $dados['parametros']);
         }
 
         $dados['titulo'] = "Alterar";
         $dados['pg_header'] = "Editar Informação do Usuário";
         $dados['_view'] = 'painel_controle/formularios/form_alt_user';
-        $dados['tb_user'] = $this->Alt_user_model->selec_dado('user', $user_id);
-        $dados['tb_grupo'] = $this->Alt_user_model->selec_dados('grupo');
+        $dados['tb_user'] = $this->Alt_user_model->selec_registro('user', $user_id);
+        $dados['tb_grupo'] = $this->Alt_user_model->selec_tabela('grupo');
         $dados['usuario'] = $this->Login_model->get_user_by_id($this->session->userdata('uid'));
         $this->load->view('painel_controle/index', $dados);
     }

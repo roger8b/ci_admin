@@ -8,26 +8,26 @@ class Alt_user_model extends CI_Model
         parent::__construct();
     }
 
-    // Select + Where
+    // Seleciona registro
 
-    function selec_dado($tabela, $id)
+    function selec_registro($tabela, $id)
     {
         return $this->db->get_where($tabela, array(
             'id' => $id
         ))->row_array();
     }
 
-    // Select All
+    // Seleciona Tabela.
 
-    function selec_dados($tabela)
+    function selec_tabela($tabela)
     {
         $this->db->order_by('id', 'asc');
         return $this->db->get($tabela)->result_array();
     }
 
-    // Update
+    // Atualisa dados da tabela
 
-    function update_dados($tabela, $id, $parametros)
+    function update_registro($tabela, $id, $parametros)
     {
         $consulta = $this->db->get_where($tabela, array(
             'id' => $id
