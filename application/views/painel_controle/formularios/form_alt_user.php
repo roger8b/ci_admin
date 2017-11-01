@@ -10,6 +10,14 @@
           foreach ($msg_banco as $msg) {
             echo $msg;
           }
+
+          if (isset($_REQUEST)){
+              $tb_user['nome'] = $_REQUEST['txt_nome'];
+              $tb_user['email'] = $_REQUEST['txt_email'];
+              $tb_user['cpf'] = $_REQUEST['txt_cpf'];
+              $tb_user['crm'] = $_REQUEST['txt_crm'];
+              $tb_user['dt_nasc'] = $_REQUEST['txt_dt_nasc'];
+          }
           }?>
 
           <?php echo form_open('alterar/usuario/'.$tb_user['id'])  ?>

@@ -11,7 +11,6 @@ CREATE TABLE IF NOT EXISTS `user` (
   `dt_nasc` date NOT NULL,
   `senha` varchar(40) NOT NULL,
   `tipo` int(2) NOT NULL,
-  `grupo` char(10) NOT NULL,
   `status` int(2) NOT NULL,
   `dt_criado` date,
   `dt_desativado` date,
@@ -29,3 +28,16 @@ CREATE TABLE IF NOT EXISTS `grupo` (
   `dt_desativado` date,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `user_grupo` (
+  `id_user` INT(12) NOT NULL,
+  `id_grupo` INT(12) NOT NULL,
+  `dt_entrada` DATE,
+  `dt_saida` DATE,
+  `user_status` INT(2),
+  PRIMARY KEY (id_user, id_grupo),
+  FOREIGN KEY (id_user) REFERENCES user(id),
+  FOREIGN KEY (id_grupo) REFERENCES grupo(id))
+  ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
